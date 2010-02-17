@@ -1,0 +1,11 @@
+Version 0.0.0.1
+===============
+	*	This is the initial release.
+	*	No issues has been addressed in this version.
+
+Version 0.0.0.2 (2008.01.08)
+===============
+	*	Changes to the select background screen.
+	*	Added a preview screen for the Grayscale filter option.
+	*	Added a preview screen for the Contrast filter options.
+	*	Fixed minor issue on the TextEditor, it know remembers the color on re-entering edit mode.

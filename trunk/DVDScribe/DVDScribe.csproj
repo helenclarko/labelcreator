@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E0505D5-B2CC-4F6B-8C26-F4A95EED0EF8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DVDScribe</RootNamespace>
+    <AssemblyName>DVDScribe</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>DVDScribe.Program</StartupObject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>img_app_icon.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExpTreeLib, Version=2.11.3698.30026, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ExpTreeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmContrastPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContrastPreview.Designer.cs">
+      <DependentUpon>frmContrastPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrayscalePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrayscalePreview.Designer.cs">
+      <DependentUpon>frmGrayscalePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPreviewBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPreviewBase.Designer.cs">
+      <DependentUpon>frmPreviewBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackgroundAngle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackgroundAngle.Designer.cs">
+      <DependentUpon>frmBackgroundAngle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackgroundResize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackgroundResize.Designer.cs">
+      <DependentUpon>frmBackgroundResize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectBackground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectBackground.Designer.cs">
+      <DependentUpon>frmSelectBackground.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTextEditor.Designer.cs">
+      <DependentUpon>frmTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageEdit.Designer.cs">
+      <DependentUpon>ImageEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="libControls.cs" />
+    <Compile Include="libFile.cs" />
+    <Compile Include="libImage.cs" />
+    <Compile Include="libLS.cs" />
+    <Compile Include="libRegistry.cs" />
+    <Compile Include="LSCover.cs" />
+    <Compile Include="NativeCalls.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContrastPreview.resx">
+      <DependentUpon>frmContrastPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrayscalePreview.resx">
+      <DependentUpon>frmGrayscalePreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPreviewBase.resx">
+      <DependentUpon>frmPreviewBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackgroundAngle.resx">
+      <DependentUpon>frmBackgroundAngle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackgroundResize.resx">
+      <DependentUpon>frmBackgroundResize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectBackground.resx">
+      <DependentUpon>frmSelectBackground.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTextEditor.resx">
+      <DependentUpon>frmTextEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageEdit.resx">
+      <DependentUpon>ImageEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextEdit.resx">
+      <DependentUpon>TextEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TextEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextEdit.Designer.cs">
+      <DependentUpon>TextEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_disc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_save_as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_text_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_drag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_editimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_image_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_add_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\img_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img_app_icon.ico" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\img_color.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
