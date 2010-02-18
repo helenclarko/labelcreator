@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
 using ExpTreeLib;
+using System.Collections;
 
 namespace DVDScribe
 {
@@ -592,34 +593,53 @@ namespace DVDScribe
 
         }
 
-        private void expTree1_ExpTreeNodeSelected(string SelPath, CShItem Item)
+        private void expTree1_ExpTreeNodeSelected(string SelPath, CShItem CSI)
         {
-         
+
+
             ImageList imgList = new ImageList();
             imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             imgList.ImageSize = new System.Drawing.Size(128, 128);
             lv.BeginUpdate();
             lv.Items.Clear();
             iFiles = 0;
-            try
-            {
-            DirectoryInfo dir = new DirectoryInfo(SelPath);
-            foreach (FileInfo file in dir.GetFiles())
-            {
-                if (file.Extension == ".jpg" || file.Extension == ".png" || file.Extension == ".bmp")
-                {
-                    Image thumb = Image.FromFile(file.FullName);
-                    imgList.Images.Add(thumb);
+          //  Item.Folder
 
-                    ListViewItem lvi = lv.Items.Add(file.Name);
-                    lvi.ImageIndex = lvi.Index;
-                    lvi.Tag = file.FullName;
+            ArrayList dirList = new ArrayList();
+            ArrayList fileList = new ArrayList();
+
+            if (CSI.DisplayName.Equals(CShItem.strMyComputer))
+            {
+                dirList = CSI.GetDirectories(true);
+            }
+            else
+            {
+                dirList = CSI.GetDirectories(true);
+                fileList = CSI.GetFiles();
+            }
+
+            
+           try {
+            foreach (CShItem file in fileList)
+            {
+                 if (file.Path.EndsWith(".jpg") || file.Path.EndsWith(".png") || file.Path.EndsWith(".bmp"))
+                {
+                    try { 
+                        Image thumb = Image.FromFile(file.Path);
+                        imgList.Images.Add(thumb);
+
+                        ListViewItem lvi = lv.Items.Add(file.GetFileName());
+                        lvi.ImageIndex = lvi.Index;
+                        lvi.Tag = file.Path;
+                    }
+                    catch (Exception Ex) {
+                    }
                 }
             }
             lv.LargeImageList = imgList;
             lv.EndUpdate();
             }
-            catch (Exception Exc) { MessageBox.Show(Exc.ToString()); }
+           catch (Exception Exc) { MessageBox.Show(Exc.ToString()); }
         }
 
         private void button1_Click(object sender, EventArgs e)
