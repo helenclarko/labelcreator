@@ -277,11 +277,6 @@ namespace DVDScribe
             return libFile.GenTempFile(Args);              
         }
 
-        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        // ToDo: This section needs reworking
-        //       Serious refactoring is required here
-        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
         private void genSavedFile(string AFileName)
         {
             libFile.CoverFileArgs Args = getStandardArgs();
@@ -656,6 +651,22 @@ namespace DVDScribe
                 Cover = new Bitmap(640, 640);
             }
             pbxCanvas.Invalidate();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Bitmap CoverX = (Bitmap)Bitmap.FromFile(lv.SelectedItems[0].Tag.ToString(), false);
+                libControls.ImageField imf = new libControls.ImageField(lv.SelectedItems[0].Tag.ToString(), 200, 200, 0, 0);
+                dsControls.Add(imf);
+                imf.OnChanged = OnControlChanged;
+                imf.LauchEditor(pbxCanvas);
+                CurrentMode = Mode.mDrag;
+            }
+            catch (Exception exc)
+            {
+            }
         }
 
     }

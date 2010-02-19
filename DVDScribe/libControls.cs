@@ -113,10 +113,10 @@ namespace DVDScribe
 
                 pImage = (Bitmap)Bitmap.FromFile(FilePath, false);
                 
-                pZoomH = 200.00 / pImage.Width;
-                pZoomV = 200.00 / pImage.Height;
-                Dimention.Height = (int)(pImage.Height * pZoomV);
-                Dimention.Width = (int)(pImage.Width * pZoomH);
+                pZoomH = 200.0 / pImage.Width;
+                pZoomV = 200.0 / pImage.Height;
+                Dimention.Height = (int)(pImage.Height * pZoomH);
+                Dimention.Width = (int)(pImage.Width * pZoomV);
             }
 
             public override void Paint(Graphics g)
