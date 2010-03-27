@@ -168,7 +168,9 @@ namespace DVDScribe
 
         private void acnNewCover(object sender, EventArgs e)
         {
-            SelectBackground();
+            //Cover.Move
+            Cover = new Bitmap(640, 640);
+            pbxCanvas.Invalidate();
         }
 
         private void pbxCanvas_MouseMove(object sender, MouseEventArgs e)
@@ -527,7 +529,47 @@ namespace DVDScribe
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            ImageList imgList = new ImageList();
+            imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            imgList.ImageSize = new System.Drawing.Size(140, 140);
+            
+            lvIncludedBG.BeginUpdate();
+            lvIncludedBG.Items.Clear();
+            iFiles = 0;
+            //  Item.Folder
 
+            ArrayList dirList = new ArrayList();
+            ArrayList fileList = new ArrayList();
+
+            CShItem CSI = new CShItem(Application.StartupPath + "\\Backgrounds");
+            dirList = CSI.GetDirectories(true);
+            fileList = CSI.GetFiles();
+
+
+            try
+            {
+                foreach (CShItem file in fileList)
+                {
+                    if (file.Path.ToLower().EndsWith(".jpg") || file.Path.ToLower().EndsWith(".png") || file.Path.ToLower().EndsWith(".bmp"))
+                    {
+                        try
+                        {
+                            Image thumb = Image.FromFile(file.Path);
+                            imgList.Images.Add(thumb);
+
+                            ListViewItem lvi = lvIncludedBG.Items.Add(file.GetFileName());
+                            lvi.ImageIndex = lvi.Index;
+                            lvi.Tag = file.Path;
+                        }
+                        catch (Exception Ex)
+                        {
+                        }
+                    }
+                }
+                lvIncludedBG.LargeImageList = imgList;
+                lvIncludedBG.EndUpdate();
+            }
+            catch (Exception Exc) { MessageBox.Show(Exc.ToString()); }
         }
 
 
@@ -594,7 +636,7 @@ namespace DVDScribe
 
             ImageList imgList = new ImageList();
             imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            imgList.ImageSize = new System.Drawing.Size(128, 128);
+            imgList.ImageSize = new System.Drawing.Size(140, 140);
             lv.BeginUpdate();
             lv.Items.Clear();
             iFiles = 0;
@@ -617,7 +659,7 @@ namespace DVDScribe
            try {
             foreach (CShItem file in fileList)
             {
-                 if (file.Path.EndsWith(".jpg") || file.Path.EndsWith(".png") || file.Path.EndsWith(".bmp"))
+                if (file.Path.ToLower().EndsWith(".jpg") || file.Path.ToLower().EndsWith(".png") || file.Path.ToLower().EndsWith(".bmp"))
                 {
                     try { 
                         Image thumb = Image.FromFile(file.Path);
@@ -668,6 +710,7 @@ namespace DVDScribe
             {
             }
         }
+
 
     }
 }

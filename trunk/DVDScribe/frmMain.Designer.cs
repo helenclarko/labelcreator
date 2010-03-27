@@ -90,16 +90,21 @@
             this.lbMode = new System.Windows.Forms.ToolStripStatusLabel();
             this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.pbxCanvas = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.expTree1 = new ExpTreeLib.ExpTree();
             this.lv = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lvIncludedBG = new System.Windows.Forms.ListView();
             this.msMainMenu.SuspendLayout();
             this.tsQMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // msMainMenu
@@ -134,53 +139,53 @@
             // 
             this.newToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_new;
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
-            this.newToolStripMenuItem1.Text = "New...";
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.newToolStripMenuItem1.Text = "Nuevo...";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.acnNewCover);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(121, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(150, 6);
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_save;
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
-            this.saveToolStripMenuItem1.Text = "Save";
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.saveToolStripMenuItem1.Text = "Guardar";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_save_as;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.saveAsToolStripMenuItem.Text = "Save as...";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.saveAsToolStripMenuItem.Text = "Guardar como...";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(121, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(150, 6);
             // 
             // printToolStripMenuItem1
             // 
             this.printToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_preview;
             this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            this.printToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
-            this.printToolStripMenuItem1.Text = "Print";
+            this.printToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.printToolStripMenuItem1.Text = "Imprimir";
             this.printToolStripMenuItem1.Click += new System.EventHandler(this.acnPreview);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(121, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(150, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_exit;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.exitToolStripMenuItem1.Text = "Salir";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.acnExitApplication);
             // 
             // imgaeToolStripMenuItem
@@ -243,14 +248,14 @@
             // ayudaDeDVDScribeToolStripMenuItem
             // 
             this.ayudaDeDVDScribeToolStripMenuItem.Name = "ayudaDeDVDScribeToolStripMenuItem";
-            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.ayudaDeDVDScribeToolStripMenuItem.Text = "Ayuda de DVDScribe";
+            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.ayudaDeDVDScribeToolStripMenuItem.Text = "Ayuda";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de QBEX DVDScribe";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // dVDScribeToolStripMenuItem
@@ -578,7 +583,7 @@
             // 
             this.pbxCanvas.BackColor = System.Drawing.Color.White;
             this.pbxCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxCanvas.Location = new System.Drawing.Point(229, 63);
+            this.pbxCanvas.Location = new System.Drawing.Point(232, 63);
             this.pbxCanvas.Name = "pbxCanvas";
             this.pbxCanvas.Size = new System.Drawing.Size(644, 644);
             this.pbxCanvas.TabIndex = 3;
@@ -589,61 +594,6 @@
             this.pbxCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseDown);
             this.pbxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCanvas_Paint);
             this.pbxCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseUp);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.expTree1);
-            this.groupBox1.Controls.Add(this.lv);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(0, 58);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 649);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(118, 621);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 22);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Insertar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 621);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 22);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Poner como fondo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // expTree1
-            // 
-            this.expTree1.AllowDrop = true;
-            this.expTree1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.expTree1.Location = new System.Drawing.Point(6, 14);
-            this.expTree1.Name = "expTree1";
-            this.expTree1.ShowRootLines = false;
-            this.expTree1.Size = new System.Drawing.Size(210, 317);
-            this.expTree1.StartUpDirectory = ExpTreeLib.ExpTree.StartDir.Desktop;
-            this.expTree1.TabIndex = 8;
-            this.expTree1.ExpTreeNodeSelected += new ExpTreeLib.ExpTree.ExpTreeNodeSelectedEventHandler(this.expTree1_ExpTreeNodeSelected);
-            this.expTree1.StartUpDirectoryChanged += new ExpTreeLib.ExpTree.StartUpDirectoryChangedEventHandler(this.expTree1_StartUpDirectoryChanged);
-            // 
-            // lv
-            // 
-            this.lv.Location = new System.Drawing.Point(6, 337);
-            this.lv.Name = "lv";
-            this.lv.Size = new System.Drawing.Size(210, 278);
-            this.lv.TabIndex = 7;
-            this.lv.UseCompatibleStateImageBehavior = false;
             // 
             // imageList1
             // 
@@ -663,12 +613,96 @@
             this.imageList1.Images.SetKeyName(11, "");
             this.imageList1.Images.SetKeyName(12, "");
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(2, 63);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(225, 644);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.expTree1);
+            this.tabPage1.Controls.Add(this.lv);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(217, 618);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Explorar";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(114, 592);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 22);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Insertar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 592);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 22);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Poner como fondo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // expTree1
+            // 
+            this.expTree1.AllowDrop = true;
+            this.expTree1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.expTree1.Location = new System.Drawing.Point(3, 3);
+            this.expTree1.Name = "expTree1";
+            this.expTree1.ShowHiddenFolders = false;
+            this.expTree1.ShowRootLines = false;
+            this.expTree1.Size = new System.Drawing.Size(210, 317);
+            this.expTree1.StartUpDirectory = ExpTreeLib.ExpTree.StartDir.DesktopDirectory;
+            this.expTree1.TabIndex = 12;
+            this.expTree1.ExpTreeNodeSelected += new ExpTreeLib.ExpTree.ExpTreeNodeSelectedEventHandler(this.expTree1_ExpTreeNodeSelected);
+            this.expTree1.StartUpDirectoryChanged += new ExpTreeLib.ExpTree.StartUpDirectoryChangedEventHandler(this.expTree1_StartUpDirectoryChanged);
+            // 
+            // lv
+            // 
+            this.lv.Location = new System.Drawing.Point(3, 326);
+            this.lv.Name = "lv";
+            this.lv.Size = new System.Drawing.Size(210, 260);
+            this.lv.TabIndex = 11;
+            this.lv.UseCompatibleStateImageBehavior = false;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.lvIncludedBG);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(217, 618);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "Fondos";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lvIncludedBG
+            // 
+            this.lvIncludedBG.Location = new System.Drawing.Point(4, 3);
+            this.lvIncludedBG.Margin = new System.Windows.Forms.Padding(1);
+            this.lvIncludedBG.Name = "lvIncludedBG";
+            this.lvIncludedBG.Size = new System.Drawing.Size(210, 612);
+            this.lvIncludedBG.TabIndex = 12;
+            this.lvIncludedBG.UseCompatibleStateImageBehavior = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 735);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pbxCanvas);
             this.Controls.Add(this.ssLightScribeState);
             this.Controls.Add(this.tsQMenu);
@@ -687,7 +721,9 @@
             this.tsQMenu.ResumeLayout(false);
             this.tsQMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -755,12 +791,15 @@
         private System.Windows.Forms.SaveFileDialog dlgSaveFile;
         private System.Windows.Forms.ToolStripMenuItem ayudaDeDVDScribeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView lv;
         private System.Windows.Forms.ImageList imageList1;
-        private ExpTreeLib.ExpTree expTree1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private ExpTreeLib.ExpTree expTree1;
+        private System.Windows.Forms.ListView lv;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListView lvIncludedBG;
     }
 }
 
