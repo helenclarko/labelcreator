@@ -61,11 +61,6 @@ G:\dvdscribe\DVDScribe\obj\Release\DVDScribe.ImageEdit.resources
 G:\dvdscribe\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
 G:\dvdscribe\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
 G:\dvdscribe\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\DVDScribe.exe.config
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.exe
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.pdb
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\DVDScribe.exe
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\DVDScribe.pdb
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\ExpTreeLib.dll
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\ResolveAssemblyReference.cache
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmAbout.resources
@@ -82,3 +77,8 @@ C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.Ima
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.exe.config
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.exe
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.pdb
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.exe
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.pdb
