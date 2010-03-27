@@ -133,6 +133,8 @@ namespace DVDScribe
             {
                 Cover = new Bitmap(640, 640);
                 BufferImage = null;
+                StartX = 0;
+                StartY = 0;
                 cleardsControls();
                 pbxCanvas.Invalidate();
                 CurrentCoverPath = "";
@@ -158,10 +160,7 @@ namespace DVDScribe
 
         private void acnNewCover(object sender, EventArgs e)
         {
-            Cover = new Bitmap(640, 640);
-            StartX = 0;
-            StartY = 0;
-            pbxCanvas.Invalidate();
+            resetToBlank();
         }
 
         private void pbxCanvas_MouseMove(object sender, MouseEventArgs e)
@@ -508,16 +507,6 @@ namespace DVDScribe
             frmAboutBox.ShowDialog();
         }
 
-        private void expBrowser_PathChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             ImageList imgList = new ImageList();
@@ -546,7 +535,7 @@ namespace DVDScribe
                             Image thumb = Image.FromFile(file.Path);
                             imgList.Images.Add(thumb);
 
-                            ListViewItem lvi = lvIncludedBG.Items.Add(file.GetFileName());
+                            ListViewItem lvi = lvIncludedBG.Items.Add("");
                             lvi.ImageIndex = lvi.Index;
                             lvi.Tag = file.Path;
                         }
@@ -562,61 +551,8 @@ namespace DVDScribe
         }
 
 
-
-        private void AddFiles(string strPath)
-        {
-         /*  // listView1.BeginUpdate();
-           
-            ImageList imgList = new ImageList();
-            imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            imgList.ImageSize = new System.Drawing.Size(128, 128);
-            lv.BeginUpdate();
-            lv.Items.Clear();
-            iFiles = 0;
-            try
-            {
-            DirectoryInfo dir = new DirectoryInfo(strPath);
-            foreach (FileInfo file in dir.GetFiles())
-            {
-                if (file.Extension == ".jpg" || file.Extension == ".png" || file.Extension == ".bmp")
-                {
-                    Image thumb = Image.FromFile(file.FullName);
-                    imgList.Images.Add(thumb);
-
-                    ListViewItem lvi = lv.Items.Add(file.Name);
-                    lvi.ImageIndex = lvi.Index;
-                    lvi.Tag = file.FullName;
-                }
-            }
-            lv.LargeImageList = imgList;
-
-/*
- 
-                DirectoryInfo di = new DirectoryInfo(strPath + "\\");
-                FileInfo[] theFiles = di.GetFiles();
-                foreach (FileInfo theFile in theFiles)
-                {
-                    iFiles++;
-                    ListViewItem lvItem = new ListViewItem(theFile.Name);
-                    lvItem.SubItems.Add(theFile.Length.ToString());
-                    lvItem.SubItems.Add(theFile.LastWriteTime.ToShortDateString());
-                    lvItem.SubItems.Add(theFile.LastWriteTime.ToShortTimeString());
-                    listView1.Items.Add(lvItem);
-                }
-
-            }
-            catch (Exception Exc) { MessageBox.Show(Exc.ToString()); }
-     
-            lv.EndUpdate();*/
-        }
-
-     
-
- 
         private void expTree1_ExpTreeNodeSelected(string SelPath, CShItem CSI)
         {
-
-
             ImageList imgList = new ImageList();
             imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             imgList.ImageSize = new System.Drawing.Size(130, 130);

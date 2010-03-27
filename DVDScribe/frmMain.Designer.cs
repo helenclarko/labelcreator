@@ -65,7 +65,6 @@
             this.tsQMenu = new System.Windows.Forms.ToolStrip();
             this.tsbtnNewCover = new System.Windows.Forms.ToolStripButton();
             this.tsbtnSaveCover = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnReset = new System.Windows.Forms.ToolStripButton();
             this.tsbtnPreview = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnImage = new System.Windows.Forms.ToolStripSplitButton();
@@ -365,7 +364,6 @@
             this.tsQMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnNewCover,
             this.tsbtnSaveCover,
-            this.tsbtnReset,
             this.tsbtnPreview,
             this.toolStripSeparator3,
             this.tsbtnImage,
@@ -401,16 +399,6 @@
             this.tsbtnSaveCover.Size = new System.Drawing.Size(28, 28);
             this.tsbtnSaveCover.ToolTipText = "Save image as...";
             this.tsbtnSaveCover.Click += new System.EventHandler(this.tsbtnSaveCover_Click);
-            // 
-            // tsbtnReset
-            // 
-            this.tsbtnReset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnReset.Image = global::DVDScribe.Properties.Resources.img_refresh;
-            this.tsbtnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnReset.Name = "tsbtnReset";
-            this.tsbtnReset.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnReset.ToolTipText = "Clear cover and start again";
-            this.tsbtnReset.Click += new System.EventHandler(this.acnResetCover);
             // 
             // tsbtnPreview
             // 
@@ -664,7 +652,7 @@
             this.expTree1.ShowHiddenFolders = false;
             this.expTree1.ShowRootLines = false;
             this.expTree1.Size = new System.Drawing.Size(217, 245);
-            this.expTree1.StartUpDirectory = ExpTreeLib.ExpTree.StartDir.DesktopDirectory;
+            this.expTree1.StartUpDirectory = ExpTreeLib.ExpTree.StartDir.Desktop;
             this.expTree1.TabIndex = 12;
             this.expTree1.ExpTreeNodeSelected += new ExpTreeLib.ExpTree.ExpTreeNodeSelectedEventHandler(this.expTree1_ExpTreeNodeSelected);
             // 
@@ -833,7 +821,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.ToolStripButton tsbtnNewCover;
         private System.Windows.Forms.ToolStripButton tsbtnSaveCover;
-        private System.Windows.Forms.ToolStripButton tsbtnReset;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSplitButton tsbtnImage;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
