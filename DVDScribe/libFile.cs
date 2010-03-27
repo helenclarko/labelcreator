@@ -24,7 +24,9 @@ namespace DVDScribe
             Bitmap b = new Bitmap(640, 640);
             b.MakeTransparent(Color.White);
 
+
             Graphics g = Graphics.FromImage(b);
+            g.Clear(System.Drawing.Color.White);
 
             g.DrawImage(Args.Image, new Rectangle(Args.Location.X, Args.Location.Y, (int)(Args.Image.Width * Args.HZoom), (int)(Args.Image.Height * Args.VZoom)));
             foreach (libControls.dsControl aControl in Args.dsControls)

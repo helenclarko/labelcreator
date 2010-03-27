@@ -24,8 +24,8 @@ namespace DVDScribe
         private Bitmap BufferImage = null;
         private Double ZoomV = 1.0;
         private Double ZoomH = 1.0;
-        private int StartX = 4;
-        private int StartY = 4;
+        private int StartX = 0;
+        private int StartY = 0;
         private int DeltaX = 0;
         private int DeltaY = 0;
         private float pAngle;
@@ -83,8 +83,6 @@ namespace DVDScribe
         public frmMain()
         {
             InitializeComponent();
-            frmSplash frmSplashScreen = new frmSplash();
-            //frmSplashScreen.ShowDialog();
            
             dsControls = new List<libControls.dsControl>();
             CurrentMode = Mode.mDrag;
@@ -141,6 +139,7 @@ namespace DVDScribe
             if (MessageBox.Show("Are you sure you want to clear the current image?","New image", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 Cover = new Bitmap(640, 640);
+
                 BufferImage = null;
                 cleardsControls();
                 pbxCanvas.Invalidate();
@@ -162,14 +161,16 @@ namespace DVDScribe
             else
             {
                 Cover = new Bitmap(640, 640);
+
             }
             pbxCanvas.Invalidate();
         }
 
         private void acnNewCover(object sender, EventArgs e)
         {
-            //Cover.Move
+
             Cover = new Bitmap(640, 640);
+
             pbxCanvas.Invalidate();
         }
 
@@ -685,6 +686,7 @@ namespace DVDScribe
             catch(Exception Exc)
             {
                 Cover = new Bitmap(640, 640);
+                 
             }
             pbxCanvas.Invalidate();
         }
@@ -708,6 +710,29 @@ namespace DVDScribe
         private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lvIncludedBG_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                lvIncludedBG.SelectedItems[0].Tag.ToString();
+                Cover = (Bitmap)Bitmap.FromFile(lvIncludedBG.SelectedItems[0].Tag.ToString(), false);
+                ZoomH = 640.00 / Cover.Width;
+                ZoomV = 640.00 / Cover.Height;
+            }
+            catch (Exception Exc)
+            {
+                Cover = new Bitmap(640, 640);
+
+
+            }
+            pbxCanvas.Invalidate();
         }
 
 
