@@ -110,7 +110,7 @@ namespace DVDScribe
             public void LoadFromFile(string FilePath)
             {
                 if (!System.IO.File.Exists(FilePath)) return;
-
+                this.FilePath = FilePath;
                 pImage = (Bitmap)Bitmap.FromFile(FilePath, false);
                 
                 pZoomH = 200.0 / pImage.Width;

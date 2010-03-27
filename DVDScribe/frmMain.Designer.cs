@@ -673,7 +673,6 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.button2);
             this.splitContainer2.Panel2.Controls.Add(this.button1);
-            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
             this.splitContainer2.Size = new System.Drawing.Size(217, 385);
             this.splitContainer2.SplitterDistance = 355;
             this.splitContainer2.TabIndex = 0;
@@ -740,7 +739,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 660);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmMain
             // 
