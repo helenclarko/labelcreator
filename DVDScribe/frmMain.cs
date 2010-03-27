@@ -16,10 +16,6 @@ namespace DVDScribe
     public partial class frmMain : Form
     {
         private enum Mode { [Description("Drag mode selected")] mDrag,[Description("Text adding mode selected")] mText, [Description("Image adding mode selected")] mImage }
-
-        // Counters for statusBar1 control
-        private int iFiles = 0;
-        private int iDirectories = 0;
         private Bitmap Cover = new Bitmap(640, 640);
         private Bitmap BufferImage = null;
         private Double ZoomV = 1.0;
@@ -83,7 +79,6 @@ namespace DVDScribe
         public frmMain()
         {
             InitializeComponent();
-           
             dsControls = new List<libControls.dsControl>();
             CurrentMode = Mode.mDrag;
         }
@@ -114,9 +109,7 @@ namespace DVDScribe
         private void pbxCanvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            
             Bitmap bmp = (BufferImage == null) ? Cover : BufferImage;
-
             Rectangle rect = new Rectangle(StartX, StartY, (int)(Cover.Width * ZoomH), (int)(Cover.Height * ZoomV));
             g.DrawImage(bmp, rect);
 
@@ -136,10 +129,9 @@ namespace DVDScribe
 
         private void resetToBlank()
         {
-            if (MessageBox.Show("Are you sure you want to clear the current image?","New image", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la etiqueta actual?","Nueva etiqueta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 Cover = new Bitmap(640, 640);
-
                 BufferImage = null;
                 cleardsControls();
                 pbxCanvas.Invalidate();
@@ -154,23 +146,21 @@ namespace DVDScribe
             if (f.ShowDialog() == DialogResult.OK)
             {
                 Cover = (Bitmap)Bitmap.FromFile(f.SelectedFile, false);                
-
                 ZoomH = 640.00 / Cover.Width;
                 ZoomV = 640.00 / Cover.Height;
             }
             else
             {
                 Cover = new Bitmap(640, 640);
-
             }
             pbxCanvas.Invalidate();
         }
 
         private void acnNewCover(object sender, EventArgs e)
         {
-
             Cover = new Bitmap(640, 640);
-
+            StartX = 0;
+            StartY = 0;
             pbxCanvas.Invalidate();
         }
 
@@ -536,8 +526,6 @@ namespace DVDScribe
             
             lvIncludedBG.BeginUpdate();
             lvIncludedBG.Items.Clear();
-            iFiles = 0;
-            //  Item.Folder
 
             ArrayList dirList = new ArrayList();
             ArrayList fileList = new ArrayList();
@@ -634,8 +622,6 @@ namespace DVDScribe
             imgList.ImageSize = new System.Drawing.Size(130, 130);
             lv.BeginUpdate();
             lv.Items.Clear();
-            iFiles = 0;
-          //  Item.Folder
 
             ArrayList dirList = new ArrayList();
             ArrayList fileList = new ArrayList();

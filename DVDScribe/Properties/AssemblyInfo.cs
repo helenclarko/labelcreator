@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DVDScribe")]
+[assembly: AssemblyTitle("LabelCreator")]
 [assembly: AssemblyDescription("The is a simple free LightScribe label utility")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Opensource")]
-[assembly: AssemblyProduct("DVDScribe")]
+[assembly: AssemblyProduct("LabelCreator")]
 [assembly: AssemblyCopyright("GPL")]
 [assembly: AssemblyTrademark("None")]
 [assembly: AssemblyCulture("")]

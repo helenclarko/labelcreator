@@ -99,5 +99,10 @@ namespace DVDScribe
             }
         }
         #endregion
+
+        private void frmAbout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
