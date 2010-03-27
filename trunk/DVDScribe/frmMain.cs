@@ -531,7 +531,7 @@ namespace DVDScribe
         {
             ImageList imgList = new ImageList();
             imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            imgList.ImageSize = new System.Drawing.Size(140, 140);
+            imgList.ImageSize = new System.Drawing.Size(130, 130);
             
             lvIncludedBG.BeginUpdate();
             lvIncludedBG.Items.Clear();
@@ -623,20 +623,14 @@ namespace DVDScribe
 
      
 
-        private void expTree1_StartUpDirectoryChanged(ExpTree.StartDir newVal)
-        {
-            
-  
-
-        }
-
+ 
         private void expTree1_ExpTreeNodeSelected(string SelPath, CShItem CSI)
         {
 
 
             ImageList imgList = new ImageList();
             imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            imgList.ImageSize = new System.Drawing.Size(140, 140);
+            imgList.ImageSize = new System.Drawing.Size(130, 130);
             lv.BeginUpdate();
             lv.Items.Clear();
             iFiles = 0;
@@ -709,6 +703,11 @@ namespace DVDScribe
             catch (Exception exc)
             {
             }
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 

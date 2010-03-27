@@ -84,7 +84,6 @@
             this.tsbtnEditOptions = new System.Windows.Forms.ToolStripDropDownButton();
             this.grayscaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contrastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ssLightScribeState = new System.Windows.Forms.StatusStrip();
             this.tsSoftwareState = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsDriveState = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbMode = new System.Windows.Forms.ToolStripStatusLabel();
@@ -93,18 +92,28 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.expTree1 = new ExpTreeLib.ExpTree();
             this.lv = new System.Windows.Forms.ListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lvIncludedBG = new System.Windows.Forms.ListView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.msMainMenu.SuspendLayout();
             this.tsQMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // msMainMenu
@@ -116,7 +125,7 @@
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
             this.msMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.msMainMenu.Size = new System.Drawing.Size(879, 24);
+            this.msMainMenu.Size = new System.Drawing.Size(885, 24);
             this.msMainMenu.TabIndex = 0;
             this.msMainMenu.Text = "menuStrip1";
             // 
@@ -369,7 +378,7 @@
             this.tsQMenu.Location = new System.Drawing.Point(0, 24);
             this.tsQMenu.Name = "tsQMenu";
             this.tsQMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.tsQMenu.Size = new System.Drawing.Size(879, 31);
+            this.tsQMenu.Size = new System.Drawing.Size(885, 31);
             this.tsQMenu.TabIndex = 1;
             this.tsQMenu.Text = "toolStrip1";
             // 
@@ -554,13 +563,6 @@
             this.contrastToolStripMenuItem.Text = "Contrast";
             this.contrastToolStripMenuItem.Click += new System.EventHandler(this.acnDoCiontrastChange);
             // 
-            // ssLightScribeState
-            // 
-            this.ssLightScribeState.Location = new System.Drawing.Point(0, 713);
-            this.ssLightScribeState.Name = "ssLightScribeState";
-            this.ssLightScribeState.Size = new System.Drawing.Size(879, 22);
-            this.ssLightScribeState.TabIndex = 2;
-            // 
             // tsSoftwareState
             // 
             this.tsSoftwareState.Name = "tsSoftwareState";
@@ -581,9 +583,9 @@
             // 
             // pbxCanvas
             // 
+            this.pbxCanvas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbxCanvas.BackColor = System.Drawing.Color.White;
-            this.pbxCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxCanvas.Location = new System.Drawing.Point(232, 63);
+            this.pbxCanvas.Location = new System.Drawing.Point(13, 10);
             this.pbxCanvas.Name = "pbxCanvas";
             this.pbxCanvas.Size = new System.Drawing.Size(644, 644);
             this.pbxCanvas.TabIndex = 3;
@@ -617,65 +619,45 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(2, 63);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl1.Location = new System.Drawing.Point(0, 55);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(225, 644);
+            this.tabControl1.Size = new System.Drawing.Size(225, 660);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.expTree1);
-            this.tabPage1.Controls.Add(this.lv);
+            this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(217, 618);
+            this.tabPage1.Size = new System.Drawing.Size(217, 634);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Explorar";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(114, 592);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 22);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Insertar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 592);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 22);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Poner como fondo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // expTree1
             // 
             this.expTree1.AllowDrop = true;
             this.expTree1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.expTree1.Location = new System.Drawing.Point(3, 3);
+            this.expTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expTree1.Location = new System.Drawing.Point(0, 0);
             this.expTree1.Name = "expTree1";
             this.expTree1.ShowHiddenFolders = false;
             this.expTree1.ShowRootLines = false;
-            this.expTree1.Size = new System.Drawing.Size(210, 317);
+            this.expTree1.Size = new System.Drawing.Size(217, 245);
             this.expTree1.StartUpDirectory = ExpTreeLib.ExpTree.StartDir.DesktopDirectory;
             this.expTree1.TabIndex = 12;
             this.expTree1.ExpTreeNodeSelected += new ExpTreeLib.ExpTree.ExpTreeNodeSelectedEventHandler(this.expTree1_ExpTreeNodeSelected);
-            this.expTree1.StartUpDirectoryChanged += new ExpTreeLib.ExpTree.StartUpDirectoryChangedEventHandler(this.expTree1_StartUpDirectoryChanged);
             // 
             // lv
             // 
-            this.lv.Location = new System.Drawing.Point(3, 326);
+            this.lv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv.Location = new System.Drawing.Point(0, 0);
+            this.lv.MultiSelect = false;
             this.lv.Name = "lv";
-            this.lv.Size = new System.Drawing.Size(210, 260);
-            this.lv.TabIndex = 11;
+            this.lv.Size = new System.Drawing.Size(217, 355);
+            this.lv.TabIndex = 16;
             this.lv.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage2
@@ -683,32 +665,102 @@
             this.tabPage2.Controls.Add(this.lvIncludedBG);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(217, 618);
+            this.tabPage2.Size = new System.Drawing.Size(217, 630);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Fondos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // lvIncludedBG
             // 
-            this.lvIncludedBG.Location = new System.Drawing.Point(4, 3);
+            this.lvIncludedBG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvIncludedBG.Location = new System.Drawing.Point(0, 0);
             this.lvIncludedBG.Margin = new System.Windows.Forms.Padding(1);
+            this.lvIncludedBG.MultiSelect = false;
             this.lvIncludedBG.Name = "lvIncludedBG";
-            this.lvIncludedBG.Size = new System.Drawing.Size(210, 612);
+            this.lvIncludedBG.Size = new System.Drawing.Size(217, 630);
             this.lvIncludedBG.TabIndex = 12;
             this.lvIncludedBG.UseCompatibleStateImageBehavior = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(116, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 22);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Insertar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 22);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Poner como fondo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.expTree1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(217, 634);
+            this.splitContainer1.SplitterDistance = 245;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer2.IsSplitterFixed = true;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.lv);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.button2);
+            this.splitContainer2.Panel2.Controls.Add(this.button1);
+            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
+            this.splitContainer2.Size = new System.Drawing.Size(217, 385);
+            this.splitContainer2.SplitterDistance = 355;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.panel1.Controls.Add(this.pbxCanvas);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(225, 55);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(660, 660);
+            this.panel1.TabIndex = 4;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 735);
+            this.ClientSize = new System.Drawing.Size(885, 715);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.pbxCanvas);
-            this.Controls.Add(this.ssLightScribeState);
             this.Controls.Add(this.tsQMenu);
             this.Controls.Add(this.msMainMenu);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMainMenu;
             this.Name = "frmMain";
@@ -724,6 +776,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -742,7 +801,6 @@
         private System.Windows.Forms.ToolStripMenuItem editBackgroundToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStrip tsQMenu;
-        private System.Windows.Forms.StatusStrip ssLightScribeState;
         private System.Windows.Forms.PictureBox pbxCanvas;
         private System.Windows.Forms.ToolStripStatusLabel tsSoftwareState;
         private System.Windows.Forms.ToolStripStatusLabel tsDriveState;
@@ -794,12 +852,15 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private ExpTreeLib.ExpTree expTree1;
         private System.Windows.Forms.ListView lv;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListView lvIncludedBG;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
