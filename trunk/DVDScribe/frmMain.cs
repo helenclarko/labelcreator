@@ -629,16 +629,6 @@ namespace DVDScribe
             }
         }
 
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void lvIncludedBG_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
