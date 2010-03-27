@@ -92,27 +92,27 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.expTree1 = new ExpTreeLib.ExpTree();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lv = new System.Windows.Forms.ListView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lvIncludedBG = new System.Windows.Forms.ListView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lvIncludedBG = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.msMainMenu.SuspendLayout();
             this.tsQMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -446,7 +446,7 @@
             // 
             this.grayscaleToolStripMenuItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.grayscaleToolStripMenuItem3.Name = "grayscaleToolStripMenuItem3";
-            this.grayscaleToolStripMenuItem3.Size = new System.Drawing.Size(166, 22);
+            this.grayscaleToolStripMenuItem3.Size = new System.Drawing.Size(174, 30);
             this.grayscaleToolStripMenuItem3.Text = "Grayscale";
             this.grayscaleToolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.grayscaleToolStripMenuItem3.Click += new System.EventHandler(this.acnDoGrayScale);
@@ -455,7 +455,7 @@
             // 
             this.contrastToolStripMenuItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.contrastToolStripMenuItem3.Name = "contrastToolStripMenuItem3";
-            this.contrastToolStripMenuItem3.Size = new System.Drawing.Size(166, 22);
+            this.contrastToolStripMenuItem3.Size = new System.Drawing.Size(174, 30);
             this.contrastToolStripMenuItem3.Text = "Contrast";
             this.contrastToolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.contrastToolStripMenuItem3.Click += new System.EventHandler(this.acnDoCiontrastChange);
@@ -464,7 +464,7 @@
             // 
             this.zoomBackgroundToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_zoom;
             this.zoomBackgroundToolStripMenuItem.Name = "zoomBackgroundToolStripMenuItem";
-            this.zoomBackgroundToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.zoomBackgroundToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
             this.zoomBackgroundToolStripMenuItem.Text = "Zoom background";
             this.zoomBackgroundToolStripMenuItem.Click += new System.EventHandler(this.zoomBackgroundToolStripMenuItem_Click);
             // 
@@ -472,7 +472,7 @@
             // 
             this.rotateBackgroundToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_rotate;
             this.rotateBackgroundToolStripMenuItem.Name = "rotateBackgroundToolStripMenuItem";
-            this.rotateBackgroundToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.rotateBackgroundToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
             this.rotateBackgroundToolStripMenuItem.Text = "Rotate background";
             this.rotateBackgroundToolStripMenuItem.Click += new System.EventHandler(this.rotateBackgroundToolStripMenuItem_Click);
             // 
@@ -636,71 +636,6 @@
             this.tabPage1.Text = "Explorar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // expTree1
-            // 
-            this.expTree1.AllowDrop = true;
-            this.expTree1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.expTree1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expTree1.Location = new System.Drawing.Point(0, 0);
-            this.expTree1.Name = "expTree1";
-            this.expTree1.ShowHiddenFolders = false;
-            this.expTree1.ShowRootLines = false;
-            this.expTree1.Size = new System.Drawing.Size(217, 245);
-            this.expTree1.StartUpDirectory = ExpTreeLib.ExpTree.StartDir.DesktopDirectory;
-            this.expTree1.TabIndex = 12;
-            this.expTree1.ExpTreeNodeSelected += new ExpTreeLib.ExpTree.ExpTreeNodeSelectedEventHandler(this.expTree1_ExpTreeNodeSelected);
-            // 
-            // lv
-            // 
-            this.lv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lv.Location = new System.Drawing.Point(0, 0);
-            this.lv.MultiSelect = false;
-            this.lv.Name = "lv";
-            this.lv.Size = new System.Drawing.Size(217, 355);
-            this.lv.TabIndex = 16;
-            this.lv.UseCompatibleStateImageBehavior = false;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.lvIncludedBG);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(217, 630);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "Fondos";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // lvIncludedBG
-            // 
-            this.lvIncludedBG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvIncludedBG.Location = new System.Drawing.Point(0, 0);
-            this.lvIncludedBG.Margin = new System.Windows.Forms.Padding(1);
-            this.lvIncludedBG.MultiSelect = false;
-            this.lvIncludedBG.Name = "lvIncludedBG";
-            this.lvIncludedBG.Size = new System.Drawing.Size(217, 630);
-            this.lvIncludedBG.TabIndex = 12;
-            this.lvIncludedBG.UseCompatibleStateImageBehavior = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(116, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 22);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Insertar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 22);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Poner como fondo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -718,6 +653,20 @@
             this.splitContainer1.Size = new System.Drawing.Size(217, 634);
             this.splitContainer1.SplitterDistance = 245;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // expTree1
+            // 
+            this.expTree1.AllowDrop = true;
+            this.expTree1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.expTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expTree1.Location = new System.Drawing.Point(0, 0);
+            this.expTree1.Name = "expTree1";
+            this.expTree1.ShowHiddenFolders = false;
+            this.expTree1.ShowRootLines = false;
+            this.expTree1.Size = new System.Drawing.Size(217, 245);
+            this.expTree1.StartUpDirectory = ExpTreeLib.ExpTree.StartDir.DesktopDirectory;
+            this.expTree1.TabIndex = 12;
+            this.expTree1.ExpTreeNodeSelected += new ExpTreeLib.ExpTree.ExpTreeNodeSelectedEventHandler(this.expTree1_ExpTreeNodeSelected);
             // 
             // splitContainer2
             // 
@@ -741,6 +690,58 @@
             this.splitContainer2.SplitterDistance = 355;
             this.splitContainer2.TabIndex = 0;
             // 
+            // lv
+            // 
+            this.lv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv.Location = new System.Drawing.Point(0, 0);
+            this.lv.MultiSelect = false;
+            this.lv.Name = "lv";
+            this.lv.Size = new System.Drawing.Size(217, 355);
+            this.lv.TabIndex = 16;
+            this.lv.UseCompatibleStateImageBehavior = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(116, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 22);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Insertar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 22);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Poner como fondo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.lvIncludedBG);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(217, 634);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "Fondos";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lvIncludedBG
+            // 
+            this.lvIncludedBG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvIncludedBG.Location = new System.Drawing.Point(0, 0);
+            this.lvIncludedBG.Margin = new System.Windows.Forms.Padding(1);
+            this.lvIncludedBG.MultiSelect = false;
+            this.lvIncludedBG.Name = "lvIncludedBG";
+            this.lvIncludedBG.Size = new System.Drawing.Size(217, 634);
+            this.lvIncludedBG.TabIndex = 12;
+            this.lvIncludedBG.UseCompatibleStateImageBehavior = false;
+            this.lvIncludedBG.SelectedIndexChanged += new System.EventHandler(this.lvIncludedBG_SelectedIndexChanged);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
@@ -750,6 +751,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 660);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmMain
             // 
@@ -775,13 +777,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
