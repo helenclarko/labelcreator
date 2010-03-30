@@ -581,7 +581,6 @@ namespace DVDScribe
                     try { 
                         Image thumb = Image.FromFile(file.Path);
                         imgList.Images.Add(thumb);
-
                         ListViewItem lvi = lv.Items.Add(file.GetFileName());
                         lvi.ImageIndex = lvi.Index;
                         lvi.Tag = file.Path;
@@ -626,6 +625,7 @@ namespace DVDScribe
             }
             catch (Exception exc)
             {
+                MessageBox.Show(exc.Message);
             }
         }
 
@@ -635,6 +635,8 @@ namespace DVDScribe
             {
                 lvIncludedBG.SelectedItems[0].Tag.ToString();
                 Cover = (Bitmap)Bitmap.FromFile(lvIncludedBG.SelectedItems[0].Tag.ToString(), false);
+                StartX = 0;
+                StartY = 0;
                 ZoomH = 640.00 / Cover.Width;
                 ZoomV = 640.00 / Cover.Height;
             }
@@ -645,6 +647,11 @@ namespace DVDScribe
 
             }
             pbxCanvas.Invalidate();
+        }
+
+        private void pbxCanvas_Click(object sender, EventArgs e)
+        {
+
         }
 
 

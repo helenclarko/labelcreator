@@ -23,5 +23,10 @@ namespace DVDScribe
                 txtText.Font = dlgFont.Font;
             }
         }
+
+        private void frmTextEditor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

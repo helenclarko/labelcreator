@@ -8,8 +8,11 @@ using System.Windows.Forms;
 
 namespace DVDScribe
 {
+
+
     public partial class ImageEdit : UserControl
     {
+
         private enum SizeDirection { sdSizeUp, sdSizeDown, sdSizeLeft, sdSizeRight, sdUpLeft, sdUpRight, sdDownLeft, sdDownRight, sdNotSizing }
         private bool isSizing = false;
 
@@ -29,14 +32,22 @@ namespace DVDScribe
         {            
             InitializeComponent();
         }
-        public ImageEdit(string FilePath, Size Dimention)
-            : base()
+        public ImageEdit(string FilePath, Size Dimention) : base()
         {
             InitializeComponent();
             pbxImage.Image = (Bitmap)Bitmap.FromFile(FilePath);
             this.Size = Dimention;
             this.dlgOpenFile.FileName = FilePath;
+            MoveResizeBox();
         }
+
+        private void MoveResizeBox() {
+            bottomLeft.Top = this.Height - 8;
+            bottomRight.Top = this.Height - 8 ; 
+            bottomRight.Left = this.Width - 8;
+            topRight.Left = this.Width - 8;
+        }
+
 
         private SizeDirection GetSizeDirection(MouseEventArgs e)
         {
@@ -170,6 +181,11 @@ namespace DVDScribe
         private void ImageEdit_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
        
     }

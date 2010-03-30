@@ -73,7 +73,6 @@ C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frm
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmMain.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmSelectBackground.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmTextEditor.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.ImageEdit.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
@@ -82,3 +81,4 @@ C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.pdb
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.exe
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.pdb
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.ImageEdit.resources
