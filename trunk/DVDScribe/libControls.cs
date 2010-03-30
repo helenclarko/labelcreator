@@ -8,8 +8,13 @@ namespace DVDScribe
 {
     class libControls
     {
+
+
+
         public class dsControl
         {
+
+
             public delegate void OnChangedEvent();
 
             public OnChangedEvent OnChanged;
@@ -112,11 +117,25 @@ namespace DVDScribe
                 if (!System.IO.File.Exists(FilePath)) return;
                 this.FilePath = FilePath;
                 pImage = (Bitmap)Bitmap.FromFile(FilePath, false);
-                
-                pZoomH = 200.0 / pImage.Width;
-                pZoomV = 200.0 / pImage.Height;
-                Dimention.Height = (int)(pImage.Height * pZoomH);
-                Dimention.Width = (int)(pImage.Width * pZoomV);
+
+
+                pZoomH = 1;
+                pZoomV = 1;
+
+                if (pImage.Width > 300)
+                {
+                    pZoomH = 200.0 / pImage.Width;
+                    pZoomV = pZoomH;
+                }
+
+                if (pImage.Height > 300)
+                {
+                    pZoomH = 200.0 / pImage.Height;
+                    pZoomV = pZoomH;
+                }
+
+                Dimention.Height = (int)(pImage.Height * pZoomV);
+                Dimention.Width = (int)(pImage.Width * pZoomH);
             }
 
             public override void Paint(Graphics g)

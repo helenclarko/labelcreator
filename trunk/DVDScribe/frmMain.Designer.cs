@@ -580,6 +580,7 @@
             this.pbxCanvas.TabStop = false;
             this.pbxCanvas.DoubleClick += new System.EventHandler(this.pbxCanvas_DoubleClick);
             this.pbxCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseMove);
+            this.pbxCanvas.Click += new System.EventHandler(this.pbxCanvas_Click);
             this.pbxCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseClick);
             this.pbxCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseDown);
             this.pbxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCanvas_Paint);

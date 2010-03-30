@@ -53,6 +53,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Text editor";
+            this.Load += new System.EventHandler(this.frmTextEditor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
