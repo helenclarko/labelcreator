@@ -9,7 +9,6 @@ using System.Windows.Forms;
 namespace DVDScribe
 {
 
-
     public partial class ImageEdit : UserControl
     {
 
@@ -29,10 +28,12 @@ namespace DVDScribe
         }
 
         public ImageEdit()
-        {            
+        {
             InitializeComponent();
         }
-        public ImageEdit(string FilePath, Size Dimention) : base()
+
+        public ImageEdit(string FilePath, Size Dimention)
+            : base()
         {
             InitializeComponent();
             pbxImage.Image = (Bitmap)Bitmap.FromFile(FilePath);
@@ -41,9 +42,16 @@ namespace DVDScribe
             MoveResizeBox();
         }
 
-        private void MoveResizeBox() {
+        private void MoveResizeBox()
+        {
             bottomLeft.Top = this.Height - 8;
-            bottomRight.Top = this.Height - 8 ; 
+            centerLeft.Top = (this.Height / 2) - 4;
+            centerTop.Left = (this.Width / 2) - 4;
+            centerBottom.Left = (this.Width / 2) - 4;
+            centerRight.Top = (this.Height / 2) - 4;
+            centerRight.Left = this.Width - 8;
+            centerBottom.Top = this.Height - 8;
+            bottomRight.Top = this.Height - 8;
             bottomRight.Left = this.Width - 8;
             topRight.Left = this.Width - 8;
         }
@@ -95,7 +103,7 @@ namespace DVDScribe
             {
                 this.Cursor = Cursors.Default;
                 return SizeDirection.sdNotSizing;
-            }           
+            }
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
@@ -157,7 +165,7 @@ namespace DVDScribe
 
         private void ImageEdit_MouseMove(object sender, MouseEventArgs e)
         {
-           GetSizeDirection(e);
+            GetSizeDirection(e);
         }
 
         private void ImageEdit_MouseUp(object sender, MouseEventArgs e)
@@ -181,12 +189,82 @@ namespace DVDScribe
         private void ImageEdit_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
+            MoveResizeBox();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void topLeft_MouseDown(object sender, MouseEventArgs e)
         {
+            base.OnMouseDown(e);
+            IntPtr hwnd = this.Handle;
+            int nul = 0;
+            NativeCalls.ReleaseCapture(hwnd);
+            NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_NW, ref nul);
+        }
+
+        private void topRight_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            IntPtr hwnd = this.Handle;
+            int nul = 0;
+            NativeCalls.ReleaseCapture(hwnd);
+            NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_NE, ref nul);
+        }
+
+        private void bottomRight_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            IntPtr hwnd = this.Handle;
+            int nul = 0;
+            NativeCalls.ReleaseCapture(hwnd);
+            NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_SE, ref nul);
+        }
+
+        private void bottomLeft_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            IntPtr hwnd = this.Handle;
+            int nul = 0;
+            NativeCalls.ReleaseCapture(hwnd);
+            NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_SW, ref nul);
+        }
+
+        private void centerTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            IntPtr hwnd = this.Handle;
+            int nul = 0;
+            NativeCalls.ReleaseCapture(hwnd);
+            NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_N, ref nul);
+        }
+
+        private void centerRight_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            IntPtr hwnd = this.Handle;
+            int nul = 0;
+            NativeCalls.ReleaseCapture(hwnd);
+            NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_E, ref nul);
 
         }
-       
+
+        private void centerLeft_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            IntPtr hwnd = this.Handle;
+            int nul = 0;
+            NativeCalls.ReleaseCapture(hwnd);
+            NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_W, ref nul);
+
+        }
+
+        private void centerBottom_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            IntPtr hwnd = this.Handle;
+            int nul = 0;
+            NativeCalls.ReleaseCapture(hwnd);
+            NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_S, ref nul);
+
+        }
     }
 }
