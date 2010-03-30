@@ -9,16 +9,10 @@ namespace DVDScribe
     class libControls
     {
 
-
-
         public class dsControl
         {
-
-
             public delegate void OnChangedEvent();
-
             public OnChangedEvent OnChanged;
-
             public Point Location;
             public Size Dimention;
             public bool isPickedUp = false;
@@ -26,7 +20,6 @@ namespace DVDScribe
             private bool pSelected = false;
             protected bool pHasBorder = false;
             protected bool pHide = false;
-
             private int dragStartX;
             private int dragStartY;
 
@@ -101,7 +94,6 @@ namespace DVDScribe
         {
             private Bitmap pImage = null;
             private string FilePath = "";
-
             private double pZoomH = 0;
             private double pZoomV = 0;
             private ImageEdit Editor;
@@ -117,23 +109,18 @@ namespace DVDScribe
                 if (!System.IO.File.Exists(FilePath)) return;
                 this.FilePath = FilePath;
                 pImage = (Bitmap)Bitmap.FromFile(FilePath, false);
-
-
                 pZoomH = 1;
                 pZoomV = 1;
-
                 if (pImage.Width > 300)
                 {
                     pZoomH = 200.0 / pImage.Width;
                     pZoomV = pZoomH;
                 }
-
                 if (pImage.Height > 300)
                 {
                     pZoomH = 200.0 / pImage.Height;
                     pZoomV = pZoomH;
                 }
-
                 Dimention.Height = (int)(pImage.Height * pZoomV);
                 Dimention.Width = (int)(pImage.Width * pZoomH);
             }
@@ -145,7 +132,6 @@ namespace DVDScribe
                 {
                     Rectangle rect = new Rectangle(Location.X, Location.Y, (int)(pImage.Width * pZoomH), (int)(pImage.Height * pZoomV));
                     g.DrawImage(pImage, rect);
-                
                 }
                 Color BorderColor = Color.FromArgb(255, 0, 0, 0);
                 if (Selected)
@@ -154,7 +140,6 @@ namespace DVDScribe
                 }
                 Pen borderPen = new Pen(BorderColor);               
                 g.DrawRectangle(borderPen, this.Location.X, this.Location.Y, this.Dimention.Width, this.Dimention.Height);
-                  
             }
 
             public override void AddToImage(Graphics g)
@@ -186,7 +171,6 @@ namespace DVDScribe
                 }
                 c.Controls.Add(Editor);
                 Point NewLocation = new Point(this.Location.X - 1, this.Location.Y - 1);
-
                 Editor.Location = NewLocation;
                 editorVisible = true;
             }
@@ -194,16 +178,14 @@ namespace DVDScribe
             public override void CloseEditor(Control c)
             {
                 this.FilePath = Editor.dlgOpenFile.FileName;
-
                 this.LoadFromFile(this.FilePath);
-
                 this.Dimention = Editor.pbxImage.Size;
                 this.Location = new Point(Editor.Location.X + 1, Editor.Location.Y + 1);
                 if (pImage != null)
                 {
                     pZoomH = (double)this.Dimention.Width / (double)pImage.Width;
                     pZoomV = (double)this.Dimention.Height / (double)pImage.Height;
-                }                
+                }
                 c.Controls.Remove(Editor);
                 editorVisible = false;
                 pHide = false;

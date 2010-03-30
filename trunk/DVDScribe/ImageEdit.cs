@@ -32,8 +32,7 @@ namespace DVDScribe
             InitializeComponent();
         }
 
-        public ImageEdit(string FilePath, Size Dimention)
-            : base()
+        public ImageEdit(string FilePath, Size Dimention) : base()
         {
             InitializeComponent();
             pbxImage.Image = (Bitmap)Bitmap.FromFile(FilePath);
