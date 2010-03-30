@@ -36,12 +36,20 @@
             this.bottomLeft = new System.Windows.Forms.PictureBox();
             this.topRight = new System.Windows.Forms.PictureBox();
             this.topLeft = new System.Windows.Forms.PictureBox();
+            this.centerLeft = new System.Windows.Forms.PictureBox();
+            this.centerRight = new System.Windows.Forms.PictureBox();
+            this.centerTop = new System.Windows.Forms.PictureBox();
+            this.centerBottom = new System.Windows.Forms.PictureBox();
             this.pnlEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bottomRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bottomLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerBottom)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEdit
@@ -90,47 +98,106 @@
             // 
             this.bottomRight.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.bottomRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bottomRight.Location = new System.Drawing.Point(178, 134);
+            this.bottomRight.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.bottomRight.Location = new System.Drawing.Point(179, 134);
             this.bottomRight.Name = "bottomRight";
             this.bottomRight.Size = new System.Drawing.Size(8, 8);
             this.bottomRight.TabIndex = 2;
             this.bottomRight.TabStop = false;
+            this.bottomRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottomRight_MouseDown);
             // 
             // bottomLeft
             // 
             this.bottomLeft.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.bottomLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bottomLeft.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.bottomLeft.Location = new System.Drawing.Point(0, 134);
             this.bottomLeft.Name = "bottomLeft";
             this.bottomLeft.Size = new System.Drawing.Size(8, 8);
             this.bottomLeft.TabIndex = 3;
             this.bottomLeft.TabStop = false;
+            this.bottomLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bottomLeft_MouseDown);
             // 
             // topRight
             // 
             this.topRight.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.topRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.topRight.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.topRight.Location = new System.Drawing.Point(179, 0);
             this.topRight.Name = "topRight";
             this.topRight.Size = new System.Drawing.Size(8, 8);
             this.topRight.TabIndex = 4;
             this.topRight.TabStop = false;
+            this.topRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topRight_MouseDown);
             // 
             // topLeft
             // 
             this.topLeft.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.topLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.topLeft.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
             this.topLeft.Location = new System.Drawing.Point(0, 0);
             this.topLeft.Name = "topLeft";
             this.topLeft.Size = new System.Drawing.Size(8, 8);
             this.topLeft.TabIndex = 5;
             this.topLeft.TabStop = false;
-            this.topLeft.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.topLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topLeft_MouseDown);
+            // 
+            // centerLeft
+            // 
+            this.centerLeft.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.centerLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.centerLeft.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.centerLeft.Location = new System.Drawing.Point(0, 67);
+            this.centerLeft.Name = "centerLeft";
+            this.centerLeft.Size = new System.Drawing.Size(8, 8);
+            this.centerLeft.TabIndex = 6;
+            this.centerLeft.TabStop = false;
+            this.centerLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.centerLeft_MouseDown);
+            // 
+            // centerRight
+            // 
+            this.centerRight.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.centerRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.centerRight.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.centerRight.Location = new System.Drawing.Point(179, 67);
+            this.centerRight.Name = "centerRight";
+            this.centerRight.Size = new System.Drawing.Size(8, 8);
+            this.centerRight.TabIndex = 7;
+            this.centerRight.TabStop = false;
+            this.centerRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.centerRight_MouseDown);
+            // 
+            // centerTop
+            // 
+            this.centerTop.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.centerTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.centerTop.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.centerTop.Location = new System.Drawing.Point(89, 0);
+            this.centerTop.Name = "centerTop";
+            this.centerTop.Size = new System.Drawing.Size(8, 8);
+            this.centerTop.TabIndex = 8;
+            this.centerTop.TabStop = false;
+            this.centerTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.centerTop_MouseDown);
+            // 
+            // centerBottom
+            // 
+            this.centerBottom.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.centerBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.centerBottom.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.centerBottom.Location = new System.Drawing.Point(89, 134);
+            this.centerBottom.Name = "centerBottom";
+            this.centerBottom.Size = new System.Drawing.Size(8, 8);
+            this.centerBottom.TabIndex = 9;
+            this.centerBottom.TabStop = false;
+            this.centerBottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.centerBottom_MouseDown);
             // 
             // ImageEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.centerBottom);
+            this.Controls.Add(this.centerTop);
+            this.Controls.Add(this.centerRight);
+            this.Controls.Add(this.centerLeft);
             this.Controls.Add(this.topLeft);
             this.Controls.Add(this.topRight);
             this.Controls.Add(this.bottomLeft);
@@ -152,6 +219,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bottomLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerBottom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,6 +237,10 @@
         private System.Windows.Forms.PictureBox bottomLeft;
         private System.Windows.Forms.PictureBox topRight;
         private System.Windows.Forms.PictureBox topLeft;
+        private System.Windows.Forms.PictureBox centerLeft;
+        private System.Windows.Forms.PictureBox centerRight;
+        private System.Windows.Forms.PictureBox centerTop;
+        private System.Windows.Forms.PictureBox centerBottom;
 
     }
 }
