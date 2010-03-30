@@ -19,7 +19,6 @@ namespace DVDScribe
         {
             if (dlgFont.ShowDialog() == DialogResult.OK)
             {
-                //txtText.Font.
                 txtText.Font = dlgFont.Font;
             }
         }
