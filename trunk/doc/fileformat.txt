@@ -1,0 +1,20 @@
+File format specification LightScribe LabelCreator File
+
+Extension (LLF)
+
+
+
+ZIP File
+	label.xml
+	images\
+		
+
+
+label.xml
+
+	<?xml version="1.0" encoding="ISO-8859-15"?>
+	<label>
+		<text top="" left="" value="" format="">
+		<image top="" left="" width="" height="" src="">
+		<background top="" left="" height="" width="" src="">
+	</label>
