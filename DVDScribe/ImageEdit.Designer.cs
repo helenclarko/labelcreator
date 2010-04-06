@@ -82,6 +82,10 @@
             this.btnLoadFile.UseVisualStyleBackColor = false;
             this.btnLoadFile.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dlgOpenFile
+            // 
+            this.dlgOpenFile.Filter = "Images|*.jpg;*.bmp;*.gif;*.png";
+            // 
             // pbxImage
             // 
             this.pbxImage.Dock = System.Windows.Forms.DockStyle.Fill;

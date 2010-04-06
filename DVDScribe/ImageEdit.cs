@@ -176,7 +176,13 @@ namespace DVDScribe
         {
             if (dlgOpenFile.ShowDialog() == DialogResult.OK)
             {
-                pbxImage.Image = (Bitmap)Bitmap.FromFile(dlgOpenFile.FileName);
+                try
+                {
+                    pbxImage.Image = (Bitmap)Bitmap.FromFile(dlgOpenFile.FileName);
+                } catch (OutOfMemoryException err) {
+                    MessageBox.Show ("Ocurrio un error al cargar la imagen. Archivo de imagen invalido.");
+                    dlgOpenFile.FileName = "";
+                }
             }
         }
 
