@@ -654,6 +654,21 @@ namespace DVDScribe
 
         }
 
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    aControl.Selected = false;
+                }
+                if (aControl.editorVisible)
+                {
+                    aControl.CloseEditor(pbxCanvas);
+                }
+            }
+        }
+
 
     }
 }

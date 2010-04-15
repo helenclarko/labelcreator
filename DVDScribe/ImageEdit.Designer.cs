@@ -67,7 +67,7 @@
             // 
             // btnLoadFile
             // 
-            this.btnLoadFile.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLoadFile.BackColor = System.Drawing.SystemColors.Control;
             this.btnLoadFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnLoadFile.FlatAppearance.BorderSize = 0;
             this.btnLoadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

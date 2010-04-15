@@ -33,6 +33,7 @@
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,7 +101,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lvIncludedBG = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMainMenu.SuspendLayout();
             this.tsQMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).BeginInit();
@@ -134,7 +134,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem1,
-            this.abrirToolStripMenuItem,
+            this.openToolStripMenuItem,
             this.toolStripMenuItem3,
             this.saveToolStripMenuItem1,
             this.saveAsToolStripMenuItem,
@@ -153,6 +153,12 @@
             this.newToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
             this.newToolStripMenuItem1.Text = "Nuevo...";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.acnNewCover);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.openToolStripMenuItem.Text = "&Abrir...";
             // 
             // toolStripMenuItem3
             // 
@@ -259,7 +265,7 @@
             // ayudaDeDVDScribeToolStripMenuItem
             // 
             this.ayudaDeDVDScribeToolStripMenuItem.Name = "ayudaDeDVDScribeToolStripMenuItem";
-            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ayudaDeDVDScribeToolStripMenuItem.Text = "Ayuda";
             // 
             // acercaDeToolStripMenuItem
@@ -330,7 +336,7 @@
             // selectBackToolStripMenuItem
             // 
             this.selectBackToolStripMenuItem.Name = "selectBackToolStripMenuItem";
-            this.selectBackToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.selectBackToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.selectBackToolStripMenuItem.Text = "Select image";
             // 
             // editBackgroundToolStripMenuItem
@@ -339,19 +345,19 @@
             this.grayscaleToolStripMenuItem1,
             this.contrastToolStripMenuItem1});
             this.editBackgroundToolStripMenuItem.Name = "editBackgroundToolStripMenuItem";
-            this.editBackgroundToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.editBackgroundToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.editBackgroundToolStripMenuItem.Text = "Image";
             // 
             // grayscaleToolStripMenuItem1
             // 
             this.grayscaleToolStripMenuItem1.Name = "grayscaleToolStripMenuItem1";
-            this.grayscaleToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.grayscaleToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.grayscaleToolStripMenuItem1.Text = "Grayscale";
             // 
             // contrastToolStripMenuItem1
             // 
             this.contrastToolStripMenuItem1.Name = "contrastToolStripMenuItem1";
-            this.contrastToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.contrastToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.contrastToolStripMenuItem1.Text = "Contrast";
             // 
             // aboutToolStripMenuItem
@@ -437,7 +443,7 @@
             // 
             this.grayscaleToolStripMenuItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.grayscaleToolStripMenuItem3.Name = "grayscaleToolStripMenuItem3";
-            this.grayscaleToolStripMenuItem3.Size = new System.Drawing.Size(175, 22);
+            this.grayscaleToolStripMenuItem3.Size = new System.Drawing.Size(174, 30);
             this.grayscaleToolStripMenuItem3.Text = "Grayscale";
             this.grayscaleToolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.grayscaleToolStripMenuItem3.Click += new System.EventHandler(this.acnDoGrayScale);
@@ -446,7 +452,7 @@
             // 
             this.contrastToolStripMenuItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.contrastToolStripMenuItem3.Name = "contrastToolStripMenuItem3";
-            this.contrastToolStripMenuItem3.Size = new System.Drawing.Size(175, 22);
+            this.contrastToolStripMenuItem3.Size = new System.Drawing.Size(174, 30);
             this.contrastToolStripMenuItem3.Text = "Contrast";
             this.contrastToolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.contrastToolStripMenuItem3.Click += new System.EventHandler(this.acnDoCiontrastChange);
@@ -455,7 +461,7 @@
             // 
             this.zoomBackgroundToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_zoom;
             this.zoomBackgroundToolStripMenuItem.Name = "zoomBackgroundToolStripMenuItem";
-            this.zoomBackgroundToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.zoomBackgroundToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
             this.zoomBackgroundToolStripMenuItem.Text = "Zoom background";
             this.zoomBackgroundToolStripMenuItem.Click += new System.EventHandler(this.zoomBackgroundToolStripMenuItem_Click);
             // 
@@ -463,7 +469,7 @@
             // 
             this.rotateBackgroundToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_rotate;
             this.rotateBackgroundToolStripMenuItem.Name = "rotateBackgroundToolStripMenuItem";
-            this.rotateBackgroundToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.rotateBackgroundToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
             this.rotateBackgroundToolStripMenuItem.Text = "Rotate background";
             this.rotateBackgroundToolStripMenuItem.Click += new System.EventHandler(this.rotateBackgroundToolStripMenuItem_Click);
             // 
@@ -543,14 +549,14 @@
             // grayscaleToolStripMenuItem
             // 
             this.grayscaleToolStripMenuItem.Name = "grayscaleToolStripMenuItem";
-            this.grayscaleToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.grayscaleToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.grayscaleToolStripMenuItem.Text = "Grayscale";
             this.grayscaleToolStripMenuItem.Click += new System.EventHandler(this.acnDoGrayScale);
             // 
             // contrastToolStripMenuItem
             // 
             this.contrastToolStripMenuItem.Name = "contrastToolStripMenuItem";
-            this.contrastToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.contrastToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.contrastToolStripMenuItem.Text = "Contrast";
             this.contrastToolStripMenuItem.Click += new System.EventHandler(this.acnDoCiontrastChange);
             // 
@@ -744,12 +750,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 660);
             this.panel1.TabIndex = 4;
-            // 
-            // abrirToolStripMenuItem
-            // 
-            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.abrirToolStripMenuItem.Text = "&Abrir...";
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // frmMain
             // 
@@ -860,7 +861,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
     }
 }
 
