@@ -27,44 +27,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cmdOK = new System.Windows.Forms.Button();
+            this.cmdCreditos = new System.Windows.Forms.Button();
+            this.cmdLicense = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkSite = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // cmdOK
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(174, 223);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.cmdOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cmdOK.Location = new System.Drawing.Point(174, 223);
+            this.cmdOK.Name = "cmdOK";
+            this.cmdOK.Size = new System.Drawing.Size(75, 23);
+            this.cmdOK.TabIndex = 0;
+            this.cmdOK.Text = "Aceptar";
+            this.cmdOK.UseVisualStyleBackColor = true;
+            this.cmdOK.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // cmdCreditos
             // 
-            this.button2.Location = new System.Drawing.Point(12, 223);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Creditos";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cmdCreditos.Location = new System.Drawing.Point(12, 223);
+            this.cmdCreditos.Name = "cmdCreditos";
+            this.cmdCreditos.Size = new System.Drawing.Size(75, 23);
+            this.cmdCreditos.TabIndex = 1;
+            this.cmdCreditos.Text = "Creditos";
+            this.cmdCreditos.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // cmdLicense
             // 
-            this.button3.Location = new System.Drawing.Point(93, 223);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Licencia";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cmdLicense.Location = new System.Drawing.Point(93, 223);
+            this.cmdLicense.Name = "cmdLicense";
+            this.cmdLicense.Size = new System.Drawing.Size(75, 23);
+            this.cmdLicense.TabIndex = 2;
+            this.cmdLicense.Text = "Licencia";
+            this.cmdLicense.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -84,16 +84,16 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Label Creator";
             // 
-            // linkLabel1
+            // linkSite
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(30, 197);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(209, 13);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "http://code.google.com/p/labelcreator/";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkSite.AutoSize = true;
+            this.linkSite.Location = new System.Drawing.Point(30, 197);
+            this.linkSite.Name = "linkSite";
+            this.linkSite.Size = new System.Drawing.Size(209, 13);
+            this.linkSite.TabIndex = 5;
+            this.linkSite.TabStop = true;
+            this.linkSite.Text = "http://code.google.com/p/labelcreator/";
+            this.linkSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label2
             // 
@@ -111,12 +111,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(260, 258);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkSite);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmdLicense);
+            this.Controls.Add(this.cmdCreditos);
+            this.Controls.Add(this.cmdOK);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -127,7 +127,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Acerca de";
-            this.Load += new System.EventHandler(this.frmAbout_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -136,12 +135,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button cmdOK;
+        private System.Windows.Forms.Button cmdCreditos;
+        private System.Windows.Forms.Button cmdLicense;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkSite;
         private System.Windows.Forms.Label label2;
 
     }
