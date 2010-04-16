@@ -1,10 +1,8 @@
 ;Include modern UI
 !include "MUI2.nsh"
 
-
-
 ;Request application privileges for Windows Vista
-RequestExecutionLevel user
+RequestExecutionLevel admin
 
 ;Variables
 Var StartMenuFolder
@@ -23,11 +21,9 @@ Var StartMenuFolder
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_UNPAGE_FINISH
 
-
-
 ;Name and file 
 Name "LabelCreator"
-OutFile "LabelCreatorInstaller.exe"
+OutFile "LabelCreatorSetup.exe"
 
 ;Default install location
 InstallDir $ProgramFiles\LabelCreator
@@ -35,7 +31,6 @@ InstallDir $ProgramFiles\LabelCreator
 ;Languages
 !insertmacro MUI_LANGUAGE "Spanish"
 !insertmacro MUI_LANGUAGE "English"
-
 
 Section
 	setOutPath $INSTDIR
