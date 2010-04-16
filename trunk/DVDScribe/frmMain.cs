@@ -669,6 +669,11 @@ namespace DVDScribe
             }
         }
 
+        private void tsQMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
 
     }
 }
