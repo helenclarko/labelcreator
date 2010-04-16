@@ -32,6 +32,23 @@ InstallDir $ProgramFiles\LabelCreator
 !insertmacro MUI_LANGUAGE "Spanish"
 !insertmacro MUI_LANGUAGE "English"
 
+Function .onInit
+  System::Call 'kernel32::CreateMutexA(i 0, i 0, t "LabelCreatorInstaller") ?e'
+  Pop $R0
+  StrCmp $R0 0 +3
+	MessageBox MB_OK "The installer is already running."
+	Abort
+FunctionEnd	
+
+Function un.onInit
+  FindWindow $0 "WindowsForms10.Window.8.app.0.33c0d9d" "Label Creator"
+  StrCmp $0 0 Remove
+    MessageBox MB_ICONSTOP|MB_OK "It appears that Label Creator is currently open.$\n\
+                                  Close it and restart uninstaller."
+    Quit
+Remove:
+FunctionEnd
+ 
 Section
 	setOutPath $INSTDIR
 	file ..\DVDScribe\bin\Release\LabelCreator.exe
