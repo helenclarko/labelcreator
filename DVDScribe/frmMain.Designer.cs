@@ -126,7 +126,7 @@
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
             this.msMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.msMainMenu.Size = new System.Drawing.Size(885, 24);
+            this.msMainMenu.Size = new System.Drawing.Size(968, 24);
             this.msMainMenu.TabIndex = 0;
             this.msMainMenu.Text = "menuStrip1";
             // 
@@ -227,13 +227,13 @@
             // grayscaleToolStripMenuItem2
             // 
             this.grayscaleToolStripMenuItem2.Name = "grayscaleToolStripMenuItem2";
-            this.grayscaleToolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
+            this.grayscaleToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.grayscaleToolStripMenuItem2.Text = "Grayscale";
             // 
             // contrastToolStripMenuItem2
             // 
             this.contrastToolStripMenuItem2.Name = "contrastToolStripMenuItem2";
-            this.contrastToolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
+            this.contrastToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.contrastToolStripMenuItem2.Text = "Contrast";
             // 
             // zoomBackgroundToolStripMenuItem1
@@ -265,13 +265,13 @@
             // ayudaDeDVDScribeToolStripMenuItem
             // 
             this.ayudaDeDVDScribeToolStripMenuItem.Name = "ayudaDeDVDScribeToolStripMenuItem";
-            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.ayudaDeDVDScribeToolStripMenuItem.Text = "Ayuda";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
@@ -385,9 +385,10 @@
             this.tsQMenu.Location = new System.Drawing.Point(0, 24);
             this.tsQMenu.Name = "tsQMenu";
             this.tsQMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.tsQMenu.Size = new System.Drawing.Size(885, 31);
+            this.tsQMenu.Size = new System.Drawing.Size(968, 31);
             this.tsQMenu.TabIndex = 1;
             this.tsQMenu.Text = "toolStrip1";
+            this.tsQMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsQMenu_ItemClicked);
             // 
             // tsbtnNewCover
             // 
@@ -582,7 +583,7 @@
             // 
             this.pbxCanvas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbxCanvas.BackColor = System.Drawing.Color.White;
-            this.pbxCanvas.Location = new System.Drawing.Point(11, 8);
+            this.pbxCanvas.Location = new System.Drawing.Point(52, 30);
             this.pbxCanvas.Name = "pbxCanvas";
             this.pbxCanvas.Size = new System.Drawing.Size(644, 644);
             this.pbxCanvas.TabIndex = 3;
@@ -622,7 +623,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 55);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(225, 660);
+            this.tabControl1.Size = new System.Drawing.Size(225, 704);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -630,7 +631,7 @@
             this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(217, 634);
+            this.tabPage1.Size = new System.Drawing.Size(217, 678);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Explorar";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -649,8 +650,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(217, 634);
-            this.splitContainer1.SplitterDistance = 245;
+            this.splitContainer1.Size = new System.Drawing.Size(217, 678);
+            this.splitContainer1.SplitterDistance = 262;
             this.splitContainer1.TabIndex = 0;
             // 
             // expTree1
@@ -662,7 +663,7 @@
             this.expTree1.Name = "expTree1";
             this.expTree1.ShowHiddenFolders = false;
             this.expTree1.ShowRootLines = false;
-            this.expTree1.Size = new System.Drawing.Size(217, 245);
+            this.expTree1.Size = new System.Drawing.Size(217, 262);
             this.expTree1.StartUpDirectory = ExpTreeLib.ExpTree.StartDir.Desktop;
             this.expTree1.TabIndex = 12;
             this.expTree1.ExpTreeNodeSelected += new ExpTreeLib.ExpTree.ExpTreeNodeSelectedEventHandler(this.expTree1_ExpTreeNodeSelected);
@@ -684,8 +685,8 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.button2);
             this.splitContainer2.Panel2.Controls.Add(this.button1);
-            this.splitContainer2.Size = new System.Drawing.Size(217, 385);
-            this.splitContainer2.SplitterDistance = 355;
+            this.splitContainer2.Size = new System.Drawing.Size(217, 412);
+            this.splitContainer2.SplitterDistance = 382;
             this.splitContainer2.TabIndex = 0;
             // 
             // lv
@@ -694,7 +695,7 @@
             this.lv.Location = new System.Drawing.Point(0, 0);
             this.lv.MultiSelect = false;
             this.lv.Name = "lv";
-            this.lv.Size = new System.Drawing.Size(217, 355);
+            this.lv.Size = new System.Drawing.Size(217, 382);
             this.lv.TabIndex = 16;
             this.lv.UseCompatibleStateImageBehavior = false;
             // 
@@ -748,7 +749,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(225, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 660);
+            this.panel1.Size = new System.Drawing.Size(743, 704);
             this.panel1.TabIndex = 4;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
@@ -756,7 +757,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 715);
+            this.ClientSize = new System.Drawing.Size(968, 759);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tsQMenu);
