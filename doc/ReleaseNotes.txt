@@ -1,7 +1,13 @@
-Version 0.0.0.1
+Version 0.0.0.3 (2010.xx.xx)
 ===============
-	*	This is the initial release.
-	*	No issues has been addressed in this version.
+	*	Allow main window to be resized
+	*	Added resize handlers to images
+	*	Automaticaly resize added images 
+	*	Improved error handling when adding invalid images
+	*	Fixes the issue of burning non-covered or empty areas as 100% black
+	*	Added the image explorer on main window
+	*	Added panel to include background art with the program
+	*	...
 
 Version 0.0.0.2 (2008.01.08)
 ===============
@@ -9,3 +15,10 @@ Version 0.0.0.2 (2008.01.08)
 	*	Added a preview screen for the Grayscale filter option.
 	*	Added a preview screen for the Contrast filter options.
 	*	Fixed minor issue on the TextEditor, it know remembers the color on re-entering edit mode.
+
+
+Version 0.0.0.1
+===============
+	*	This is the initial release.
+	*	No issues has been addressed in this version.
+
