@@ -10,6 +10,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using ExpTreeLib;
 using System.Collections;
+using System.Xml;
 
 namespace DVDScribe
 {
@@ -674,6 +675,54 @@ namespace DVDScribe
 
         }
 
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resetToBlank();
+
+            openXML();
+        }
+
+        private void openXML()
+        {
+            XmlDocument xDoc = new XmlDocument();
+            String labelPath = "./../../../sample/";
+            xDoc.Load(labelPath + "label.xml");
+
+            XmlNodeList xmlLabel = xDoc.GetElementsByTagName("label");
+
+            XmlNodeList listTexts = ((XmlElement)xmlLabel[0]).GetElementsByTagName("text");
+            XmlNodeList listImages = ((XmlElement)xmlLabel[0]).GetElementsByTagName("image");
+
+            foreach (XmlElement nodo in listImages)
+            {
+
+                int nTop = Int32.Parse(nodo.GetAttribute("top"));
+                int nLeft = Int32.Parse(nodo.GetAttribute("left"));
+                int nHeight = Int32.Parse(nodo.GetAttribute("height"));
+                int nWidth = Int32.Parse(nodo.GetAttribute("width"));
+                string nSrc = nodo.GetAttribute("src");
+
+                libControls.ImageField imf = new libControls.ImageField(labelPath + "images/" + nSrc, nLeft, nTop, nHeight, nWidth);
+                dsControls.Add(imf);
+                imf.OnChanged = OnControlChanged;
+            }
+
+            foreach (XmlElement nodo in listTexts)
+            {
+
+                int nTop = Int32.Parse(nodo.GetAttribute("top"));
+                int nLeft = Int32.Parse(nodo.GetAttribute("left"));
+                string nValue = nodo.GetAttribute("value");
+                String nFormat = nodo.GetAttribute("format");
+
+                libControls.TextField tf = new libControls.TextField(nLeft, nTop, 0, 0);
+                
+                tf.Text = nValue;
+                dsControls.Add(tf);
+                tf.OnChanged = OnControlChanged;
+            }
+            pbxCanvas.Invalidate();
+        }
 
     }
 }
