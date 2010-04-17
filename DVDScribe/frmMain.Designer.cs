@@ -159,6 +159,7 @@
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.openToolStripMenuItem.Text = "&Abrir...";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -227,13 +228,13 @@
             // grayscaleToolStripMenuItem2
             // 
             this.grayscaleToolStripMenuItem2.Name = "grayscaleToolStripMenuItem2";
-            this.grayscaleToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.grayscaleToolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
             this.grayscaleToolStripMenuItem2.Text = "Grayscale";
             // 
             // contrastToolStripMenuItem2
             // 
             this.contrastToolStripMenuItem2.Name = "contrastToolStripMenuItem2";
-            this.contrastToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.contrastToolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
             this.contrastToolStripMenuItem2.Text = "Contrast";
             // 
             // zoomBackgroundToolStripMenuItem1
@@ -336,7 +337,7 @@
             // selectBackToolStripMenuItem
             // 
             this.selectBackToolStripMenuItem.Name = "selectBackToolStripMenuItem";
-            this.selectBackToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.selectBackToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.selectBackToolStripMenuItem.Text = "Select image";
             // 
             // editBackgroundToolStripMenuItem
@@ -345,19 +346,19 @@
             this.grayscaleToolStripMenuItem1,
             this.contrastToolStripMenuItem1});
             this.editBackgroundToolStripMenuItem.Name = "editBackgroundToolStripMenuItem";
-            this.editBackgroundToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.editBackgroundToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.editBackgroundToolStripMenuItem.Text = "Image";
             // 
             // grayscaleToolStripMenuItem1
             // 
             this.grayscaleToolStripMenuItem1.Name = "grayscaleToolStripMenuItem1";
-            this.grayscaleToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.grayscaleToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.grayscaleToolStripMenuItem1.Text = "Grayscale";
             // 
             // contrastToolStripMenuItem1
             // 
             this.contrastToolStripMenuItem1.Name = "contrastToolStripMenuItem1";
-            this.contrastToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.contrastToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.contrastToolStripMenuItem1.Text = "Contrast";
             // 
             // aboutToolStripMenuItem
@@ -444,7 +445,7 @@
             // 
             this.grayscaleToolStripMenuItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.grayscaleToolStripMenuItem3.Name = "grayscaleToolStripMenuItem3";
-            this.grayscaleToolStripMenuItem3.Size = new System.Drawing.Size(174, 30);
+            this.grayscaleToolStripMenuItem3.Size = new System.Drawing.Size(175, 22);
             this.grayscaleToolStripMenuItem3.Text = "Grayscale";
             this.grayscaleToolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.grayscaleToolStripMenuItem3.Click += new System.EventHandler(this.acnDoGrayScale);
@@ -453,7 +454,7 @@
             // 
             this.contrastToolStripMenuItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.contrastToolStripMenuItem3.Name = "contrastToolStripMenuItem3";
-            this.contrastToolStripMenuItem3.Size = new System.Drawing.Size(174, 30);
+            this.contrastToolStripMenuItem3.Size = new System.Drawing.Size(175, 22);
             this.contrastToolStripMenuItem3.Text = "Contrast";
             this.contrastToolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.contrastToolStripMenuItem3.Click += new System.EventHandler(this.acnDoCiontrastChange);
@@ -462,7 +463,7 @@
             // 
             this.zoomBackgroundToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_zoom;
             this.zoomBackgroundToolStripMenuItem.Name = "zoomBackgroundToolStripMenuItem";
-            this.zoomBackgroundToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
+            this.zoomBackgroundToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.zoomBackgroundToolStripMenuItem.Text = "Zoom background";
             this.zoomBackgroundToolStripMenuItem.Click += new System.EventHandler(this.zoomBackgroundToolStripMenuItem_Click);
             // 
@@ -470,7 +471,7 @@
             // 
             this.rotateBackgroundToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_rotate;
             this.rotateBackgroundToolStripMenuItem.Name = "rotateBackgroundToolStripMenuItem";
-            this.rotateBackgroundToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
+            this.rotateBackgroundToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.rotateBackgroundToolStripMenuItem.Text = "Rotate background";
             this.rotateBackgroundToolStripMenuItem.Click += new System.EventHandler(this.rotateBackgroundToolStripMenuItem_Click);
             // 
@@ -550,14 +551,14 @@
             // grayscaleToolStripMenuItem
             // 
             this.grayscaleToolStripMenuItem.Name = "grayscaleToolStripMenuItem";
-            this.grayscaleToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.grayscaleToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.grayscaleToolStripMenuItem.Text = "Grayscale";
             this.grayscaleToolStripMenuItem.Click += new System.EventHandler(this.acnDoGrayScale);
             // 
             // contrastToolStripMenuItem
             // 
             this.contrastToolStripMenuItem.Name = "contrastToolStripMenuItem";
-            this.contrastToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.contrastToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.contrastToolStripMenuItem.Text = "Contrast";
             this.contrastToolStripMenuItem.Click += new System.EventHandler(this.acnDoCiontrastChange);
             // 
@@ -724,7 +725,7 @@
             this.tabPage2.Controls.Add(this.lvIncludedBG);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(217, 634);
+            this.tabPage2.Size = new System.Drawing.Size(217, 678);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Fondos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -736,7 +737,7 @@
             this.lvIncludedBG.Margin = new System.Windows.Forms.Padding(1);
             this.lvIncludedBG.MultiSelect = false;
             this.lvIncludedBG.Name = "lvIncludedBG";
-            this.lvIncludedBG.Size = new System.Drawing.Size(217, 634);
+            this.lvIncludedBG.Size = new System.Drawing.Size(217, 678);
             this.lvIncludedBG.TabIndex = 12;
             this.lvIncludedBG.UseCompatibleStateImageBehavior = false;
             this.lvIncludedBG.SelectedIndexChanged += new System.EventHandler(this.lvIncludedBG_SelectedIndexChanged);
