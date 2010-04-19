@@ -100,8 +100,14 @@ namespace DVDScribe
 
             public ImageField(string FilePath,int X, int Y, int Height, int Width) : base(X, Y, Height, Width) 
             {
+                
                 LoadFromFile(FilePath);
                 Location = new Point(X,Y);
+                if (Height > 0 && Width > 0)
+                {
+                    Dimention.Height = Height;
+                    Dimention.Width = Width;
+                }
             }
 
             public void LoadFromFile(string FilePath)
@@ -130,7 +136,7 @@ namespace DVDScribe
                 if (pHide) return;
                 if (pImage != null)
                 {
-                    Rectangle rect = new Rectangle(Location.X, Location.Y, (int)(pImage.Width * pZoomH), (int)(pImage.Height * pZoomV));
+                    Rectangle rect = new Rectangle(Location.X, Location.Y, Dimention.Width , Dimention.Height );
                     g.DrawImage(pImage, rect);
                 }
                 Color BorderColor = Color.FromArgb(255, 0, 0, 0);
