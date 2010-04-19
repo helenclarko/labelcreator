@@ -131,6 +131,14 @@ namespace DVDScribe
                 Dimention.Width = (int)(pImage.Width * pZoomH);
             }
 
+
+            public void SaveToFile(string FilePath)
+            {
+                if (System.IO.File.Exists(FilePath)) return;
+                pImage.Save(FilePath, System.Drawing.Imaging.ImageFormat.Png);
+              
+            }
+
             public override void Paint(Graphics g)
             {
                 if (pHide) return;
