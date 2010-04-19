@@ -50,7 +50,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 170);
+            this.groupBox1.Size = new System.Drawing.Size(356, 168);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resize options";
@@ -60,7 +60,7 @@
             this.cbxRatio.AutoSize = true;
             this.cbxRatio.Location = new System.Drawing.Point(15, 143);
             this.cbxRatio.Name = "cbxRatio";
-            this.cbxRatio.Size = new System.Drawing.Size(74, 17);
+            this.cbxRatio.Size = new System.Drawing.Size(78, 17);
             this.cbxRatio.TabIndex = 4;
             this.cbxRatio.Text = "Keep ratio";
             this.cbxRatio.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             this.tbrHZoom.Location = new System.Drawing.Point(6, 104);
             this.tbrHZoom.Maximum = 3000;
             this.tbrHZoom.Name = "tbrHZoom";
-            this.tbrHZoom.Size = new System.Drawing.Size(335, 42);
+            this.tbrHZoom.Size = new System.Drawing.Size(335, 45);
             this.tbrHZoom.TabIndex = 3;
             this.tbrHZoom.TickFrequency = 100;
             this.tbrHZoom.ValueChanged += new System.EventHandler(this.OnTrackbarValuesChanged);
@@ -80,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Width";
             // 
@@ -89,7 +89,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Height";
             // 
@@ -98,7 +98,7 @@
             this.tbrVZoom.Location = new System.Drawing.Point(6, 36);
             this.tbrVZoom.Maximum = 3000;
             this.tbrVZoom.Name = "tbrVZoom";
-            this.tbrVZoom.Size = new System.Drawing.Size(335, 42);
+            this.tbrVZoom.Size = new System.Drawing.Size(335, 45);
             this.tbrVZoom.TabIndex = 0;
             this.tbrVZoom.TickFrequency = 100;
             this.tbrVZoom.ValueChanged += new System.EventHandler(this.OnTrackbarValuesChanged);
@@ -117,9 +117,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 200);
+            this.ClientSize = new System.Drawing.Size(356, 203);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmBackgroundResize";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

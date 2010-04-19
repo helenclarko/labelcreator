@@ -56,7 +56,7 @@
             0,
             0});
             this.edtAngle.Name = "edtAngle";
-            this.edtAngle.Size = new System.Drawing.Size(155, 20);
+            this.edtAngle.Size = new System.Drawing.Size(155, 22);
             this.edtAngle.TabIndex = 1;
             this.edtAngle.ValueChanged += new System.EventHandler(this.edtAngle_ValueChanged);
             // 
@@ -65,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Angle";
             // 
@@ -75,6 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(217, 56);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmBackgroundAngle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

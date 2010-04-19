@@ -32,9 +32,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxOrg)).BeginInit();
             this.SuspendLayout();
             // 
+            // pbxPreview
+            // 
+            this.pbxPreview.Location = new System.Drawing.Point(3, 18);
+            this.pbxPreview.Size = new System.Drawing.Size(215, 220);
+            // 
             // groupBox2
             // 
             this.groupBox2.Text = "Grayscale";
+            // 
+            // pbxOrg
+            // 
+            this.pbxOrg.Location = new System.Drawing.Point(3, 18);
+            this.pbxOrg.Size = new System.Drawing.Size(225, 220);
             // 
             // btnOk
             // 
@@ -44,6 +54,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(460, 294);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmGrayscalePreview";
             this.Text = "Grayscale preview";
             ((System.ComponentModel.ISupportInitialize)(this.pbxPreview)).EndInit();
