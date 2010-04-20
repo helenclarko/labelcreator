@@ -74,6 +74,7 @@
             this.tbrHZoom.TabIndex = 3;
             this.tbrHZoom.TickFrequency = 100;
             this.tbrHZoom.ValueChanged += new System.EventHandler(this.OnTrackbarValuesChanged);
+            this.tbrHZoom.Scroll += new System.EventHandler(this.tbrHZoom_Scroll);
             // 
             // label2
             // 

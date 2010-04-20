@@ -39,6 +39,32 @@ namespace DVDScribe
                 }
             }
 
+
+            public int Height
+            {
+                get
+                {
+                    return Dimention.Height;
+                }
+                set
+                {
+             
+                }
+            }
+
+            public int Width
+            {
+                get
+                {
+                    return Dimention.Width;
+                }
+                set
+                {
+
+                }
+            }
+
+
             public dsControl()
             {
                 Location = new Point();
@@ -131,10 +157,10 @@ namespace DVDScribe
                 Dimention.Width = (int)(pImage.Width * pZoomH);
             }
 
-
+            
             public void SaveToFile(string FilePath)
             {
-                if (System.IO.File.Exists(FilePath)) return;
+                
                 pImage.Save(FilePath, System.Drawing.Imaging.ImageFormat.Png);
               
             }

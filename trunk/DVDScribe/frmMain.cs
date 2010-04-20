@@ -745,7 +745,11 @@ namespace DVDScribe
             XmlNode xmlnode;
             XmlElement xmlelem;
             XmlElement xmlelem2;
-            String labelPath = "./../../../sample2/";
+            String labelPath = @".\..\..\..\sample2\";
+
+            string[] filePaths = Directory.GetFiles(labelPath, "*.png");
+            foreach (string filePath in filePaths)
+                File.Delete(filePath);
 
             xmldoc=new XmlDocument();
             xmlnode=xmldoc.CreateNode(XmlNodeType.XmlDeclaration,"","");
@@ -753,31 +757,47 @@ namespace DVDScribe
             xmlelem=xmldoc.CreateElement("","label", "" );
             xmldoc.AppendChild(xmlelem);
 
-            foreach (libControls.TextField mText in dsControls)
-            {
-                xmlelem2 = xmldoc.CreateElement("", "text", "");
-                xmlelem2.SetAttribute("value", mText.Text);
-                xmlelem2.SetAttribute("top", mText.Location.Y.ToString());
-                xmlelem2.SetAttribute("left", mText.Location.X.ToString());
-                xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
-            }
-
+            
             int n = 0;
-            foreach (libControls.ImageField mImage in dsControls)
+            try
             {
-                n++;
-                xmlelem2 = xmldoc.CreateElement("", "image", "");
-                mImage.SaveToFile(labelPath + "imagen"+n.ToString()+".png");
-                xmlelem2.SetAttribute("src", labelPath + "imagen" + n.ToString() + ".png");
-                xmlelem2.SetAttribute("top", mImage.Location.Y.ToString());
-                xmlelem2.SetAttribute("left", mImage.Location.X.ToString());
-                xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
+            foreach (libControls.dsControl mControl in dsControls)
+            {
+                if (mControl.GetType().ToString() == "DVDScribe.libControls+ImageField")
+                {
+                    n++;
+                    xmlelem2 = xmldoc.CreateElement("", "image", "");
+                    libControls.ImageField mImage = (libControls.ImageField)mControl;
+                    mImage.SaveToFile(labelPath + "imagen" + n.ToString() + ".png");
+                    xmlelem2.SetAttribute("src", "imagen" + n.ToString() + ".png");
+                    xmlelem2.SetAttribute("top", mImage.Location.Y.ToString());
+                    xmlelem2.SetAttribute("left", mImage.Location.X.ToString());
+                    xmlelem2.SetAttribute("height", mImage.Height.ToString());
+                    xmlelem2.SetAttribute("width", mImage.Width.ToString());
+                    xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
+                }
+                else
+                {
+                    libControls.TextField mText = (libControls.TextField)mControl;
+                    xmlelem2 = xmldoc.CreateElement("", "text", "");
+                    xmlelem2.SetAttribute("value", mText.Text);
+                    xmlelem2.SetAttribute("top", mText.Location.Y.ToString());
+                    xmlelem2.SetAttribute("left", mText.Location.X.ToString());
+                    xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
+                }
             }
+            }
+            catch (Exception xx)
+            {
 
+            }
             xmlelem2 = xmldoc.CreateElement("", "background", "");
-            xmlelem2.SetAttribute("src", "mImage");
+            Cover.Save(labelPath+"background.png", ImageFormat.Png);
+            xmlelem2.SetAttribute("src", "background.png");
             xmlelem2.SetAttribute("top", StartY.ToString());
             xmlelem2.SetAttribute("left", StartX.ToString());
+            xmlelem2.SetAttribute("width", Cover.Width.ToString());
+            xmlelem2.SetAttribute("height", Cover.Height.ToString());
             xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
 
             try
