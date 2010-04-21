@@ -239,7 +239,7 @@ namespace DVDScribe
         public class TextField : dsControl
         {
             private String pText = "<Label>";
-            private Font pFont = new Font("Verdana", 10);
+            public Font pFont = new Font("Verdana", 10);
             private Color pColor = Color.Black;            
             private TextEdit Editor;
 
