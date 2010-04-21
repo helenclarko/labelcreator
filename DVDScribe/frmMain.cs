@@ -26,7 +26,7 @@ namespace DVDScribe
         private int DeltaX = 0;
         private int DeltaY = 0;
         private float pAngle;
-        private string CurrentCoverPath = "";
+        private string CurrentCoverPath = String.Empty;
 
         private float Angle
         {
@@ -138,7 +138,7 @@ namespace DVDScribe
                 StartY = 0;
                 cleardsControls();
                 pbxCanvas.Invalidate();
-                CurrentCoverPath = "";
+                CurrentCoverPath = String.Empty;
                 pAngle = 0;
             }
         }
@@ -388,7 +388,7 @@ namespace DVDScribe
                     tf.LauchEditor(pbxCanvas);                    
                     CurrentMode = Mode.mDrag;
                     break;
-                case Mode.mImage: libControls.ImageField imf = new libControls.ImageField("",e.X,e.Y,0,0);
+                case Mode.mImage: libControls.ImageField imf = new libControls.ImageField(String.Empty,e.X,e.Y,0,0);
                     dsControls.Add(imf);
                     imf.OnChanged = OnControlChanged;
                     imf.LauchEditor(pbxCanvas);
@@ -536,7 +536,7 @@ namespace DVDScribe
                             Image thumb = Image.FromFile(file.Path);
                             imgList.Images.Add(thumb);
 
-                            ListViewItem lvi = lvIncludedBG.Items.Add("");
+                            ListViewItem lvi = lvIncludedBG.Items.Add(String.Empty);
                             lvi.ImageIndex = lvi.Index;
                             lvi.Tag = file.Path;
                         }
@@ -677,16 +677,20 @@ namespace DVDScribe
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            resetToBlank();
-
-            openXML();
+            dlgOpenDialog.Filter = "Label Creator Files (*.llf)|*.xml";
+            if (dlgOpenDialog.ShowDialog() == DialogResult.OK)
+            {
+                resetToBlank();
+                String labelPath = Path.GetDirectoryName(dlgOpenDialog.FileName);
+                openXML(labelPath);
+            }
         }
 
-        private void openXML()
+        private void openXML(String labelPath)
         {
             XmlDocument xDoc = new XmlDocument();
-            String labelPath = "./../../../sample/";
-            xDoc.Load(labelPath + "label.xml");
+            
+            xDoc.Load(Path.Combine(labelPath , "label.xml"));
 
             XmlNodeList xmlLabel = xDoc.GetElementsByTagName("label");
 
@@ -702,7 +706,7 @@ namespace DVDScribe
                 int nWidth = Int32.Parse(nodo.GetAttribute("width"));
                 string nSrc = nodo.GetAttribute("src");
 
-                libControls.ImageField imf = new libControls.ImageField(labelPath + "images/" + nSrc, nLeft, nTop, nHeight, nWidth);
+                libControls.ImageField imf = new libControls.ImageField(Path.Combine(Path.Combine(labelPath , "images"), nSrc), nLeft, nTop, nHeight, nWidth);
                 dsControls.Add(imf);
                 imf.OnChanged = OnControlChanged;
             }
@@ -713,10 +717,14 @@ namespace DVDScribe
                 int nLeft = Int32.Parse(nodo.GetAttribute("left"));
                 string nValue = nodo.GetAttribute("value");
                 String nFormat = nodo.GetAttribute("format");
-
                 libControls.TextField tf = new libControls.TextField(nLeft, nTop, 0, 0);
                 
                 tf.Text = nValue;
+                TypeConverter tc = TypeDescriptor.GetConverter(typeof(Font));
+                
+                tf.pFont = (Font)tc.ConvertFromString(nFormat);
+                if (tf.pFont == null) tf.pFont = new Font("Verdana", 10);
+
                 dsControls.Add(tf);
                 tf.OnChanged = OnControlChanged;
             }
@@ -727,7 +735,7 @@ namespace DVDScribe
                 try
                 {
                     string nSrc = nodo.GetAttribute("src");
-                    Cover = (Bitmap)Bitmap.FromFile(labelPath + "images/" + nSrc, false);
+                    Cover = (Bitmap)Bitmap.FromFile(Path.Combine(Path.Combine(labelPath, "images"), nSrc), false);
                     ZoomH = 640.00 / Cover.Width;
                     ZoomV = 640.00 / Cover.Height;
                 }
@@ -745,54 +753,81 @@ namespace DVDScribe
             XmlNode xmlnode;
             XmlElement xmlelem;
             XmlElement xmlelem2;
-            String labelPath = @".\..\..\..\sample2\";
-
-            string[] filePaths = Directory.GetFiles(labelPath, "*.png");
-            foreach (string filePath in filePaths)
-                File.Delete(filePath);
-
-            xmldoc=new XmlDocument();
-            xmlnode=xmldoc.CreateNode(XmlNodeType.XmlDeclaration,"","");
-            xmldoc.AppendChild(xmlnode);
-            xmlelem=xmldoc.CreateElement("","label", "" );
-            xmldoc.AppendChild(xmlelem);
-
-            
-            int n = 0;
-            try
-            {
-            foreach (libControls.dsControl mControl in dsControls)
-            {
-                if (mControl.GetType().ToString() == "DVDScribe.libControls+ImageField")
+            String labelPath;
+           // if (String.IsNullOrEmpty(CurrentCoverPath))
+            //{
+                if (dlgSaveFile.ShowDialog() == DialogResult.OK)
                 {
-                    n++;
-                    xmlelem2 = xmldoc.CreateElement("", "image", "");
-                    libControls.ImageField mImage = (libControls.ImageField)mControl;
-                    mImage.SaveToFile(labelPath + "imagen" + n.ToString() + ".png");
-                    xmlelem2.SetAttribute("src", "imagen" + n.ToString() + ".png");
-                    xmlelem2.SetAttribute("top", mImage.Location.Y.ToString());
-                    xmlelem2.SetAttribute("left", mImage.Location.X.ToString());
-                    xmlelem2.SetAttribute("height", mImage.Height.ToString());
-                    xmlelem2.SetAttribute("width", mImage.Width.ToString());
-                    xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
+                    labelPath = Path.GetDirectoryName(dlgSaveFile.FileName);
                 }
                 else
                 {
-                    libControls.TextField mText = (libControls.TextField)mControl;
-                    xmlelem2 = xmldoc.CreateElement("", "text", "");
-                    xmlelem2.SetAttribute("value", mText.Text);
-                    xmlelem2.SetAttribute("top", mText.Location.Y.ToString());
-                    xmlelem2.SetAttribute("left", mText.Location.X.ToString());
-                    xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
+                    return;
+                }
+            //}
+            //genSavedFile(CurrentCoverPath);
+
+            
+
+            Directory.CreateDirectory(Path.Combine(labelPath, "images"));
+
+            string[] filePaths = Directory.GetFiles(Path.Combine(labelPath, "images"), "*.png");
+            foreach (string filePath in filePaths)
+            {
+                try
+                {
+                    File.Delete(filePath);
+                }
+                catch (Exception eee)
+                {
+
                 }
             }
+
+            xmldoc=new XmlDocument();
+            xmlnode=xmldoc.CreateNode(XmlNodeType.XmlDeclaration,String.Empty,String.Empty);
+            xmldoc.AppendChild(xmlnode);
+            xmlelem=xmldoc.CreateElement(String.Empty,"label", String.Empty );
+            xmldoc.AppendChild(xmlelem);
+
+            int n = 0;
+            try
+            {
+                TypeConverter tc = TypeDescriptor.GetConverter(typeof(Font));
+                foreach (libControls.dsControl mControl in dsControls)
+                {
+                    if (mControl.GetType().ToString() == "DVDScribe.libControls+ImageField")
+                    {
+                        n++;
+                        xmlelem2 = xmldoc.CreateElement(String.Empty, "image", String.Empty);
+                        libControls.ImageField mImage = (libControls.ImageField)mControl;
+                        mImage.SaveToFile(Path.Combine(Path.Combine(labelPath, "images"), "image" + n.ToString() + ".png"));
+                        xmlelem2.SetAttribute("src", "image" + n.ToString() + ".png");
+                        xmlelem2.SetAttribute("top", mImage.Location.Y.ToString());
+                        xmlelem2.SetAttribute("left", mImage.Location.X.ToString());
+                        xmlelem2.SetAttribute("height", mImage.Height.ToString());
+                        xmlelem2.SetAttribute("width", mImage.Width.ToString());
+                        xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
+                    }
+                    else
+                    {
+                        libControls.TextField mText = (libControls.TextField)mControl;
+                        xmlelem2 = xmldoc.CreateElement(String.Empty, "text", String.Empty);
+                        xmlelem2.SetAttribute("value", mText.Text);
+                        string fontString = tc.ConvertToString(mText.pFont);
+                        xmlelem2.SetAttribute("format", fontString);
+                        xmlelem2.SetAttribute("top", mText.Location.Y.ToString());
+                        xmlelem2.SetAttribute("left", mText.Location.X.ToString());
+                        xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
+                    }
+                }
             }
             catch (Exception xx)
             {
 
             }
-            xmlelem2 = xmldoc.CreateElement("", "background", "");
-            Cover.Save(labelPath+"background.png", ImageFormat.Png);
+            xmlelem2 = xmldoc.CreateElement(String.Empty, "background", String.Empty);
+            Cover.Save(Path.Combine(Path.Combine(labelPath, "images"), "background.png"), ImageFormat.Png);
             xmlelem2.SetAttribute("src", "background.png");
             xmlelem2.SetAttribute("top", StartY.ToString());
             xmlelem2.SetAttribute("left", StartX.ToString());
@@ -802,11 +837,12 @@ namespace DVDScribe
 
             try
             {
-                xmldoc.Save(labelPath + "label.xml");
+                xmldoc.Save(Path.Combine(labelPath, "label.xml"));
             }
             catch (Exception exx)
             {
-                Console.WriteLine(exx.Message);
+               
+
             }
          
 

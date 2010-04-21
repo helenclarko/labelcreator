@@ -101,6 +101,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lvIncludedBG = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dlgOpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.msMainMenu.SuspendLayout();
             this.tsQMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).BeginInit();
@@ -865,6 +866,7 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog dlgOpenDialog;
     }
 }
 
