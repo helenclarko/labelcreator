@@ -593,7 +593,6 @@
             this.pbxCanvas.TabStop = false;
             this.pbxCanvas.DoubleClick += new System.EventHandler(this.pbxCanvas_DoubleClick);
             this.pbxCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseMove);
-            this.pbxCanvas.Click += new System.EventHandler(this.pbxCanvas_Click);
             this.pbxCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseClick);
             this.pbxCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseDown);
             this.pbxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCanvas_Paint);
@@ -767,12 +766,14 @@
             this.Controls.Add(this.msMainMenu);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.msMainMenu;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Label Creator";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Shown += new System.EventHandler(this.frmMain_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
             this.tsQMenu.ResumeLayout(false);
