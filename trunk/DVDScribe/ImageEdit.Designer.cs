@@ -144,6 +144,7 @@
             this.topLeft.Size = new System.Drawing.Size(8, 8);
             this.topLeft.TabIndex = 5;
             this.topLeft.TabStop = false;
+            this.topLeft.Click += new System.EventHandler(this.topLeft_Click);
             this.topLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topLeft_MouseDown);
             // 
             // centerLeft

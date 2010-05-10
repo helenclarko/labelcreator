@@ -733,6 +733,7 @@ namespace DVDScribe
                     Cover = (Bitmap)Bitmap.FromFile(Path.Combine(Path.Combine(labelPath, "images"), nSrc), false);
                     ZoomH = 640.00 / Cover.Width;
                     ZoomV = 640.00 / Cover.Height;
+                    this.Angle = float.Parse(nodo.GetAttribute("angle"));
                 }
                 catch (Exception Exc)
                 {
@@ -749,21 +750,16 @@ namespace DVDScribe
             XmlElement xmlelem;
             XmlElement xmlelem2;
             String labelPath;
-           // if (String.IsNullOrEmpty(CurrentCoverPath))
-            //{
-                if (dlgSaveFile.ShowDialog() == DialogResult.OK)
-                {
-                    labelPath = Path.GetDirectoryName(dlgSaveFile.FileName);
-                }
-                else
-                {
-                    return;
-                }
-            //}
-            //genSavedFile(CurrentCoverPath);
 
+            if (dlgSaveFile.ShowDialog() == DialogResult.OK)
+            {
+                labelPath = Path.GetDirectoryName(dlgSaveFile.FileName);
+            }
+            else
+            {
+                return;
+            }
             
-
             Directory.CreateDirectory(Path.Combine(labelPath, "images"));
 
             string[] filePaths = Directory.GetFiles(Path.Combine(labelPath, "images"), "*.png");
@@ -828,6 +824,7 @@ namespace DVDScribe
             xmlelem2.SetAttribute("left", StartX.ToString());
             xmlelem2.SetAttribute("width", Cover.Width.ToString());
             xmlelem2.SetAttribute("height", Cover.Height.ToString());
+            xmlelem2.SetAttribute("angle", pAngle.ToString());
             xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
 
             try
