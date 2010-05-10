@@ -650,11 +650,6 @@ namespace DVDScribe
             pbxCanvas.Invalidate();
         }
 
-        private void pbxCanvas_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel1_Click(object sender, EventArgs e)
         {
             foreach (libControls.dsControl aControl in dsControls)
@@ -847,6 +842,16 @@ namespace DVDScribe
          
 
         }
+
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                deleteControls();
+            }
+        }
+
 
     }
 }
