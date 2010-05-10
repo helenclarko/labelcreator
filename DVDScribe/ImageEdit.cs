@@ -269,6 +269,11 @@ namespace DVDScribe
             int nul = 0;
             NativeCalls.ReleaseCapture(hwnd);
             NativeCalls.SendMessage(hwnd, NativeCalls.WM_SYSCOMMAND, NativeCalls.SC_DRAGSIZE_S, ref nul);
+            
+        }
+
+        private void topLeft_Click(object sender, EventArgs e)
+        {
 
         }
     }
