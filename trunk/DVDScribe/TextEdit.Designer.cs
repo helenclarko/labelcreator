@@ -46,7 +46,7 @@
             this.txtText.MinimumSize = new System.Drawing.Size(161, 28);
             this.txtText.Multiline = true;
             this.txtText.Name = "txtText";
-            this.txtText.Size = new System.Drawing.Size(161, 28);
+            this.txtText.Size = new System.Drawing.Size(161, 31);
             this.txtText.TabIndex = 0;
             this.txtText.TextChanged += new System.EventHandler(this.txtText_TextChanged);
             this.txtText.MultilineChanged += new System.EventHandler(this.txtText_MultilineChanged);
@@ -56,28 +56,26 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(161, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 28);
+            this.splitter1.Size = new System.Drawing.Size(3, 31);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
             // btnColor
             // 
-            this.btnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnColor.Image = global::DVDScribe.Properties.Resources.img_color;
-            this.btnColor.Location = new System.Drawing.Point(190, 2);
+            this.btnColor.Location = new System.Drawing.Point(194, 2);
             this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(23, 23);
+            this.btnColor.Size = new System.Drawing.Size(26, 26);
             this.btnColor.TabIndex = 2;
             this.btnColor.UseVisualStyleBackColor = true;
             this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // btnFont
             // 
-            this.btnFont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFont.Image = global::DVDScribe.Properties.Resources.img_text_edit;
             this.btnFont.Location = new System.Drawing.Point(167, 2);
             this.btnFont.Name = "btnFont";
-            this.btnFont.Size = new System.Drawing.Size(23, 23);
+            this.btnFont.Size = new System.Drawing.Size(26, 26);
             this.btnFont.TabIndex = 1;
             this.btnFont.UseVisualStyleBackColor = true;
             this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
@@ -94,7 +92,7 @@
             this.Controls.Add(this.txtText);
             this.DoubleBuffered = true;
             this.Name = "TextEdit";
-            this.Size = new System.Drawing.Size(216, 28);
+            this.Size = new System.Drawing.Size(223, 31);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TextEdit_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();

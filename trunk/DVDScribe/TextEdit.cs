@@ -26,6 +26,7 @@ namespace DVDScribe
 
         private void btnFont_Click(object sender, EventArgs e)
         {
+            dlgFont.Font = txtText.Font;
             if (dlgFont.ShowDialog() == DialogResult.OK)
             {
                 txtText.Font = dlgFont.Font;
