@@ -731,9 +731,17 @@ namespace DVDScribe
                 {
                     string nSrc = nodo.GetAttribute("src");
                     Cover = (Bitmap)Bitmap.FromFile(Path.Combine(Path.Combine(labelPath, "images"), nSrc), false);
+                    
                     ZoomH = 640.00 / Cover.Width;
                     ZoomV = 640.00 / Cover.Height;
-                    this.Angle = float.Parse(nodo.GetAttribute("angle"));
+
+                  /*  if (nodo.HasAttribute("width"))
+                           ZoomH = float.Parse(nodo.GetAttribute("width")) / 640;
+                    if (nodo.HasAttribute("height"))
+                           ZoomV = float.Parse(nodo.GetAttribute("height")) / 640;
+
+                    if (nodo.HasAttribute("angle"))
+                        this.Angle = float.Parse(nodo.GetAttribute("angle"));*/
                 }
                 catch (Exception Exc)
                 {
@@ -799,9 +807,7 @@ namespace DVDScribe
                         xmlelem2.SetAttribute("height", mImage.Height.ToString());
                         xmlelem2.SetAttribute("width", mImage.Width.ToString());
                         xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
-                    }
-                    else
-                    {
+                    } else {
                         libControls.TextField mText = (libControls.TextField)mControl;
                         xmlelem2 = xmldoc.CreateElement(String.Empty, "text", String.Empty);
                         xmlelem2.SetAttribute("value", mText.Text);
@@ -817,6 +823,7 @@ namespace DVDScribe
             {
 
             }
+
             xmlelem2 = xmldoc.CreateElement(String.Empty, "background", String.Empty);
             Cover.Save(Path.Combine(Path.Combine(labelPath, "images"), "background.png"), ImageFormat.Png);
             xmlelem2.SetAttribute("src", "background.png");
@@ -833,20 +840,21 @@ namespace DVDScribe
             }
             catch (Exception exx)
             {
-               
+                MessageBox.Show("Error guardando XML");
 
             }
-         
-
         }
 
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
-            {
                 deleteControls();
-            }
+        }
+
+        private void tsbtnImage_ButtonClick(object sender, EventArgs e)
+        {
+
         }
 
 
