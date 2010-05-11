@@ -727,26 +727,39 @@ namespace DVDScribe
             XmlNodeList xmlBg = ((XmlElement)xmlLabel[0]).GetElementsByTagName("background");
             foreach (XmlElement nodo in xmlBg)
             {
-                try
-                {
-                    string nSrc = nodo.GetAttribute("src");
-                    Cover = (Bitmap)Bitmap.FromFile(Path.Combine(Path.Combine(labelPath, "images"), nSrc), false);
-                    
-                    ZoomH = 640.00 / Cover.Width;
-                    ZoomV = 640.00 / Cover.Height;
+                    if (nodo.HasAttribute("src"))
+                    {
+                        try
+                        {
+                            string nSrc = nodo.GetAttribute("src");
+                            Cover = (Bitmap)Bitmap.FromFile(Path.Combine(Path.Combine(labelPath, "images"), nSrc), false);
+                        }
+                        catch { }
+                    }
+                    else 
+                    {
+                        Cover = new Bitmap(640, 640);
+                    }
+                    if (nodo.HasAttribute("zoomh"))
+                        ZoomH = double.Parse(nodo.GetAttribute("zoomh"));
+                    else
+	                    ZoomH = 1;
 
-                  /*  if (nodo.HasAttribute("width"))
-                           ZoomH = float.Parse(nodo.GetAttribute("width")) / 640;
-                    if (nodo.HasAttribute("height"))
-                           ZoomV = float.Parse(nodo.GetAttribute("height")) / 640;
+                    if (nodo.HasAttribute("zoomv"))
+                        ZoomV = double.Parse(nodo.GetAttribute("zoomv"));
+                    else 
+                        ZoomV = 1;
 
-                    if (nodo.HasAttribute("angle"))
-                        this.Angle = float.Parse(nodo.GetAttribute("angle"));*/
-                }
-                catch (Exception Exc)
-                {
-                    Cover = new Bitmap(640, 640);
-                }
+                    if (nodo.HasAttribute("left"))
+                        StartX = int.Parse(nodo.GetAttribute("left"));
+                    else
+                        StartX = 0;
+
+                    if (nodo.HasAttribute("top"))
+                        StartY = int.Parse(nodo.GetAttribute("top"));
+                    else
+                        StartY = 0;
+
             }
             pbxCanvas.Invalidate();
         }
@@ -829,8 +842,8 @@ namespace DVDScribe
             xmlelem2.SetAttribute("src", "background.png");
             xmlelem2.SetAttribute("top", StartY.ToString());
             xmlelem2.SetAttribute("left", StartX.ToString());
-            xmlelem2.SetAttribute("width", Cover.Width.ToString());
-            xmlelem2.SetAttribute("height", Cover.Height.ToString());
+            xmlelem2.SetAttribute("zoomh", ZoomH.ToString());
+            xmlelem2.SetAttribute("zoomv", ZoomV.ToString());
             xmlelem2.SetAttribute("angle", pAngle.ToString());
             xmldoc.ChildNodes.Item(1).AppendChild(xmlelem2);
 
