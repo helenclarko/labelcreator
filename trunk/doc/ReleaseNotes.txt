@@ -7,6 +7,8 @@ Version 0.0.0.3 (2010.xx.xx)
 	*	Fixes the issue of burning non-covered or empty areas as 100% black
 	*	Added the image explorer on main window
 	*	Added panel to include background art with the program
+	*	Partially implemented opening/saving label projects
+	*	When key DEL is pressed the current object is deleted
 	*	...
 
 Version 0.0.0.2 (2008.01.08)
