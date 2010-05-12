@@ -711,15 +711,20 @@ namespace DVDScribe
                 int nTop = Int32.Parse(nodo.GetAttribute("top"));
                 int nLeft = Int32.Parse(nodo.GetAttribute("left"));
                 string nValue = nodo.GetAttribute("value");
-                String nFormat = nodo.GetAttribute("format");
                 libControls.TextField tf = new libControls.TextField(nLeft, nTop, 0, 0);
-                
                 tf.Text = nValue;
-                TypeConverter tc = TypeDescriptor.GetConverter(typeof(Font));
-                
-                tf.pFont = (Font)tc.ConvertFromString(nFormat);
-                if (tf.pFont == null) tf.pFont = new Font("Verdana", 10);
 
+                if (nodo.HasAttribute("format"))
+                {
+                    String nFormat = nodo.GetAttribute("format");
+                    TypeConverter tc = TypeDescriptor.GetConverter(typeof(Font));
+                    tf.pFont = (Font)tc.ConvertFromString(nFormat);
+                    if (tf.pFont == null) tf.pFont = new Font("Verdana", 10);
+                }
+                else
+                {
+                    tf.pFont = new Font("Verdana", 10);
+                }
                 dsControls.Add(tf);
                 tf.OnChanged = OnControlChanged;
             }
@@ -734,7 +739,9 @@ namespace DVDScribe
                             string nSrc = nodo.GetAttribute("src");
                             Cover = (Bitmap)Bitmap.FromFile(Path.Combine(Path.Combine(labelPath, "images"), nSrc), false);
                         }
-                        catch { }
+                        catch {
+                            Cover = new Bitmap(640, 640);
+                        }
                     }
                     else 
                     {
