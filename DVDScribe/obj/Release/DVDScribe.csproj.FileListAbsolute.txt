@@ -103,3 +103,4 @@ C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Rel
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\ICSharpCode.SharpZipLib.dll
