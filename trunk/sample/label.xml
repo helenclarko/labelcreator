@@ -1,8 +1,0 @@
-<?xml version='1.0' ?>
-<label>
-	<text top="100" left="300" value="Text" format="not sure" />
-	<image top="41" left="54" width="20" height="20" src="image2.png" />
-	<image top="10" left="10" width="50" height="50" src="image1.png" />	
-	<background top="0" left="0" height="640" width="640" src="background.jpg" />
-</label>
-
