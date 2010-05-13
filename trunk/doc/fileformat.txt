@@ -16,5 +16,5 @@ label.xml
 	<label>
 		<text top="" left="" value="" format="">
 		<image top="" left="" width="" height="" src="">
-		<background top="" left="" height="" width="" src="" angle="">
+		<background top="" left="" zoomh="" zoomv="" src="" angle="">
 	</label>

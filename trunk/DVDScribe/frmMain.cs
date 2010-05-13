@@ -11,6 +11,7 @@ using System.Drawing.Imaging;
 using ExpTreeLib;
 using System.Collections;
 using System.Xml;
+using ICSharpCode.SharpZipLib.Zip;
 
 namespace DVDScribe
 {
@@ -861,10 +862,66 @@ namespace DVDScribe
             catch (Exception exx)
             {
                 MessageBox.Show("Error guardando XML");
-
             }
+
+            FastZipEvents events = null;
+
+            FastZip fastZip = new FastZip(events);
+            fastZip.CreateEmptyDirectories = true;
+            fastZip.RestoreAttributesOnExtract = true;
+            fastZip.RestoreDateTimeOnExtract = true;
+
+            fastZip.CreateZip(labelPath+".zip", labelPath, true, "");
         }
 
+
+        private bool ZipDirectory(string strDirectory, string strFileZip)
+        {
+             
+            if (!Directory.Exists(strDirectory))
+            {
+                Console.WriteLine("Cannot find directory '{0}'", strDirectory);
+                return false;
+            }
+
+            try
+            {
+                string[] filenames = Directory.GetFiles(strDirectory);
+                using (ZipOutputStream s = new ZipOutputStream(File.Create(strFileZip)))
+                {
+
+                    s.SetLevel(9); 
+                    byte[] buffer = new byte[4096];
+
+                    foreach (string file in filenames)
+                    {
+                        ZipEntry entry = new ZipEntry(Path.GetFileName(file));
+                        entry.DateTime = DateTime.Now;
+                        s.PutNextEntry(entry);
+
+                        using (FileStream fs = File.OpenRead(file))
+                        {
+                            int sourceBytes;
+                            do
+                            {
+                                sourceBytes = fs.Read(buffer, 0, buffer.Length);
+                                s.Write(buffer, 0, sourceBytes);
+                            } while (sourceBytes > 0);
+                        }
+                    }
+
+
+                    s.Finish();
+                    s.Close();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception during processing {0}", ex);
+                return false;
+            }
+        }
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
