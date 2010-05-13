@@ -673,11 +673,20 @@ namespace DVDScribe
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dlgOpenDialog.Filter = "Label Creator Files (*.llf)|*.xml";
+            dlgOpenDialog.Filter = "Label Creator Files (*.llf)|*.llf";
             if (dlgOpenDialog.ShowDialog() == DialogResult.OK)
             {
                 resetToBlank();
-                String labelPath = Path.GetDirectoryName(dlgOpenDialog.FileName);
+                String labelPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                Directory.CreateDirectory(labelPath);
+
+                FastZipEvents events = null;
+                FastZip fastZip = new FastZip(events);
+                fastZip.CreateEmptyDirectories = true;
+                fastZip.RestoreAttributesOnExtract = true;
+                fastZip.RestoreDateTimeOnExtract = true;
+
+                fastZip.ExtractZip(dlgOpenDialog.FileName, labelPath, "");
                 openXML(labelPath);
             }
         }
@@ -779,30 +788,21 @@ namespace DVDScribe
             XmlElement xmlelem;
             XmlElement xmlelem2;
             String labelPath;
-
+            String zipPath;
+            dlgSaveFile.Filter = "Label Creator Files (*.llf)|*.llf";
             if (dlgSaveFile.ShowDialog() == DialogResult.OK)
             {
-                labelPath = Path.GetDirectoryName(dlgSaveFile.FileName);
+                zipPath = Path.GetDirectoryName(dlgSaveFile.FileName);
             }
             else
             {
                 return;
             }
-            
+
+            labelPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+
+            Directory.CreateDirectory(labelPath);
             Directory.CreateDirectory(Path.Combine(labelPath, "images"));
-
-            string[] filePaths = Directory.GetFiles(Path.Combine(labelPath, "images"), "*.png");
-            foreach (string filePath in filePaths)
-            {
-                try
-                {
-                    File.Delete(filePath);
-                }
-                catch (Exception eee)
-                {
-
-                }
-            }
 
             xmldoc=new XmlDocument();
             xmlnode=xmldoc.CreateNode(XmlNodeType.XmlDeclaration,String.Empty,String.Empty);
@@ -871,7 +871,7 @@ namespace DVDScribe
             fastZip.RestoreAttributesOnExtract = true;
             fastZip.RestoreDateTimeOnExtract = true;
 
-            fastZip.CreateZip(labelPath+".zip", labelPath, true, "");
+            fastZip.CreateZip(dlgSaveFile.FileName, labelPath, true, "");
         }
 
 
