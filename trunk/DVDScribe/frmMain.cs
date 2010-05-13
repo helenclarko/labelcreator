@@ -790,6 +790,7 @@ namespace DVDScribe
             String labelPath;
             String zipPath;
             dlgSaveFile.Filter = "Label Creator Files (*.llf)|*.llf";
+//            dlgSaveFile.FileName = "";
             if (dlgSaveFile.ShowDialog() == DialogResult.OK)
             {
                 zipPath = Path.GetDirectoryName(dlgSaveFile.FileName);
@@ -872,55 +873,6 @@ namespace DVDScribe
             fastZip.RestoreDateTimeOnExtract = true;
 
             fastZip.CreateZip(dlgSaveFile.FileName, labelPath, true, "");
-        }
-
-
-        private bool ZipDirectory(string strDirectory, string strFileZip)
-        {
-             
-            if (!Directory.Exists(strDirectory))
-            {
-                Console.WriteLine("Cannot find directory '{0}'", strDirectory);
-                return false;
-            }
-
-            try
-            {
-                string[] filenames = Directory.GetFiles(strDirectory);
-                using (ZipOutputStream s = new ZipOutputStream(File.Create(strFileZip)))
-                {
-
-                    s.SetLevel(9); 
-                    byte[] buffer = new byte[4096];
-
-                    foreach (string file in filenames)
-                    {
-                        ZipEntry entry = new ZipEntry(Path.GetFileName(file));
-                        entry.DateTime = DateTime.Now;
-                        s.PutNextEntry(entry);
-
-                        using (FileStream fs = File.OpenRead(file))
-                        {
-                            int sourceBytes;
-                            do
-                            {
-                                sourceBytes = fs.Read(buffer, 0, buffer.Length);
-                                s.Write(buffer, 0, sourceBytes);
-                            } while (sourceBytes > 0);
-                        }
-                    }
-
-
-                    s.Finish();
-                    s.Close();
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception during processing {0}", ex);
-                return false;
-            }
         }
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
