@@ -106,5 +106,11 @@ namespace DVDScribe
         {
             System.Diagnostics.Process.Start("http://code.google.com/p/labelcreator/");
         }
+
+        private void cmdLicense_Click(object sender, EventArgs e)
+        {
+            frmLicense frmLicenseBox = new frmLicense();
+            frmLicenseBox.ShowDialog();
+        }
     }
 }
