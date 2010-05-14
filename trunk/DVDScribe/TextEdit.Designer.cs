@@ -62,6 +62,7 @@
             // 
             // btnColor
             // 
+            this.btnColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnColor.Image = global::DVDScribe.Properties.Resources.img_color;
             this.btnColor.Location = new System.Drawing.Point(194, 2);
             this.btnColor.Name = "btnColor";
@@ -72,6 +73,7 @@
             // 
             // btnFont
             // 
+            this.btnFont.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFont.Image = global::DVDScribe.Properties.Resources.img_text_edit;
             this.btnFont.Location = new System.Drawing.Point(167, 2);
             this.btnFont.Name = "btnFont";
