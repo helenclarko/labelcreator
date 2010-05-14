@@ -112,5 +112,11 @@ namespace DVDScribe
             frmLicense frmLicenseBox = new frmLicense();
             frmLicenseBox.ShowDialog();
         }
+
+        private void cmdCreditos_Click(object sender, EventArgs e)
+        {
+            frmCredits frmCreditsBox = new frmCredits();
+            frmCreditsBox.ShowDialog();
+        }
     }
 }
