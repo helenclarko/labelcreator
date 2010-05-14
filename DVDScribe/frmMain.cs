@@ -673,7 +673,6 @@ namespace DVDScribe
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dlgOpenDialog.Filter = "Label Creator Files (*.llf)|*.llf";
             if (dlgOpenDialog.ShowDialog() == DialogResult.OK)
             {
                 resetToBlank();
@@ -688,6 +687,7 @@ namespace DVDScribe
 
                 fastZip.ExtractZip(dlgOpenDialog.FileName, labelPath, "");
                 openXML(labelPath);
+                dlgSaveFile.FileName = dlgOpenDialog.FileName;
             }
         }
 
@@ -789,15 +789,20 @@ namespace DVDScribe
             XmlElement xmlelem2;
             String labelPath;
             String zipPath;
-            dlgSaveFile.Filter = "Label Creator Files (*.llf)|*.llf";
-//            dlgSaveFile.FileName = "";
-            if (dlgSaveFile.ShowDialog() == DialogResult.OK)
+            if (dlgSaveFile.FileName == "")
             {
-                zipPath = Path.GetDirectoryName(dlgSaveFile.FileName);
+                if (dlgSaveFile.ShowDialog() == DialogResult.OK)
+                {
+                    zipPath = Path.GetDirectoryName(dlgSaveFile.FileName);
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
-                return;
+                zipPath = Path.GetDirectoryName(dlgSaveFile.FileName);
             }
 
             labelPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());

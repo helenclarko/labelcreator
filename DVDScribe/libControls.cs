@@ -143,14 +143,14 @@ namespace DVDScribe
                 pImage = (Bitmap)Bitmap.FromFile(FilePath, false);
                 pZoomH = 1;
                 pZoomV = 1;
-                if (pImage.Width > 300)
+                if (pImage.Width > 250)
                 {
-                    pZoomH = 200.0 / pImage.Width;
+                    pZoomH = 180.0 / pImage.Width;
                     pZoomV = pZoomH;
                 }
-                if (pImage.Height > 300)
+                if (pImage.Height > 250)
                 {
-                    pZoomH = 200.0 / pImage.Height;
+                    pZoomH = 180.0 / pImage.Height;
                     pZoomV = pZoomH;
                 }
                 Dimention.Height = (int)(pImage.Height * pZoomV);
