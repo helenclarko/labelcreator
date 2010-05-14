@@ -66,6 +66,7 @@
             this.cmdLicense.TabIndex = 2;
             this.cmdLicense.Text = "Licencia";
             this.cmdLicense.UseVisualStyleBackColor = true;
+            this.cmdLicense.Click += new System.EventHandler(this.cmdLicense_Click);
             // 
             // pictureBox1
             // 
