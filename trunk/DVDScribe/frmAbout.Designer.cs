@@ -57,6 +57,7 @@
             this.cmdCreditos.TabIndex = 1;
             this.cmdCreditos.Text = "Creditos";
             this.cmdCreditos.UseVisualStyleBackColor = true;
+            this.cmdCreditos.Click += new System.EventHandler(this.cmdCreditos_Click);
             // 
             // cmdLicense
             // 

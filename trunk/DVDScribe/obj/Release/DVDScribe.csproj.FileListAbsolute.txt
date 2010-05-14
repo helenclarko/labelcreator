@@ -106,3 +106,5 @@ C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Rel
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\ICSharpCode.SharpZipLib.dll
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\bin\Release\ICSharpCode.SharpZipLib.dll
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\DVDScribe.frmLicense.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmLicense.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmCredits.resources
