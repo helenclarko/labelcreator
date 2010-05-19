@@ -26,6 +26,7 @@ namespace DVDScribe
         private int StartY = 0;
         private int DeltaX = 0;
         private int DeltaY = 0;
+        private bool controlPressed = false;
         private float pAngle;
         private string CurrentCoverPath = String.Empty;
 
@@ -398,7 +399,7 @@ namespace DVDScribe
                 case Mode.mDrag:
                     foreach(libControls.dsControl aControl in dsControls)
                     {
-                        if (aControl.Selected)
+                        if (aControl.Selected && controlPressed == false)
                         {
                             aControl.Selected = false;
                         }
@@ -884,11 +885,129 @@ namespace DVDScribe
         {
             if (e.KeyCode == Keys.Delete)
                 deleteControls();
+            if (e.KeyCode == Keys.ControlKey)
+                controlPressed = true;
         }
 
         private void tsbtnImage_ButtonClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbxCanvas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey)
+                controlPressed = false;
+        }
+
+        private void tsbtnAlignToLeft_Click(object sender, EventArgs e)
+        {
+            int left = 640;
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    if (aControl.Location.X < left) left = aControl.Location.X;
+                }
+            }
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    aControl.Location.X = left;
+                }
+            }
+            pbxCanvas.Invalidate();
+
+        }
+
+        private void tsbtnAlignToRight_Click(object sender, EventArgs e)
+        {
+            int right = 0;
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    if (aControl.Location.X + aControl.Width > right) right = aControl.Location.X + aControl.Width ;
+                }
+            }
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    aControl.Location.X = right - aControl.Width;
+                }
+            }
+            pbxCanvas.Invalidate();
+        }
+
+        private void tsbtnAlignToTop_Click(object sender, EventArgs e)
+        {
+            int top = 640;
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    if (aControl.Location.Y < top) top = aControl.Location.Y;
+                }
+            }
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    aControl.Location.Y = top;
+                }
+            }
+            pbxCanvas.Invalidate();
+        }
+
+        private void tsbtnAlignToBottom_Click(object sender, EventArgs e)
+        {
+            int top = 0;
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    if (aControl.Location.Y + aControl.Height > top) top = aControl.Location.Y + aControl.Height ;
+                }
+            }
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    aControl.Location.Y = top - aControl.Height;
+                }
+            }
+            pbxCanvas.Invalidate();
+        }
+
+        private void tsbtnCenterHorizontal_Click(object sender, EventArgs e)
+        {
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    aControl.Location.X = (640 - aControl.Width) / 2;
+                }
+            }
+            pbxCanvas.Invalidate();
+        }
+
+        private void tsbtnCenterVertical_Click(object sender, EventArgs e)
+        {
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    aControl.Location.Y = (640 - aControl.Height) / 2;
+                }
+            }
+            pbxCanvas.Invalidate();
         }
 
 
