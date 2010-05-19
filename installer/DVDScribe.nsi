@@ -53,6 +53,7 @@ Section
 	setOutPath $INSTDIR
 	file ..\DVDScribe\bin\Release\LabelCreator.exe
 	file ..\DVDScribe\bin\Release\ExpTreeLib.dll
+	file ..\DVDScribe\bin\Release\ICSharpCode.SharpZipLib.dll
 	file ..\doc\ReadMe.txt
 	file ..\doc\license.txt
 	file ..\doc\ReleaseNotes.txt
@@ -62,23 +63,24 @@ Section
 	file ..\DVDScribe\bin\Release\Backgrounds\1.jpg
 	file ..\DVDScribe\bin\Release\Backgrounds\2.jpg
 
-	writeUninstaller $INSTDIR\uninstall.exe
+	writeUninstaller $INSTDIR\Uninstall.exe
 
 	CreateDirectory "$SMPROGRAMS\LabelCreator"
 
 	createShortCut "$SMPROGRAMS\LabelCreator\LabelCreator.lnk" "$INSTDIR\LabelCreator.exe"
 	createShortCut "$SMPROGRAMS\LabelCreator\Readme.lnk" "$INSTDIR\ReadMe.txt"
-	createShortCut "$SMPROGRAMS\LabelCreator\uninstall.lnk" "$INSTDIR\uninstall.exe"
+	createShortCut "$SMPROGRAMS\LabelCreator\Uninstall.lnk" "$INSTDIR\Uninstall.exe"
 
 SectionEnd
 	
 Section "Uninstall"
-	delete $INSTDIR\uninstall.exe
+	delete $INSTDIR\Uninstall.exe
 	delete $INSTDIR\LabelCreator.exe
 	delete $INSTDIR\ExpTreeLib.dll
 	delete $INSTDIR\ReadMe.txt
 	delete $INSTDIR\license.txt
 	delete $INSTDIR\ReleaseNotes.txt
+	delete $INSTDIR\ICSharpCode.SharpZipLib.dll
 
 	delete $INSTDIR\Backgrounds\1.jpg
 	delete $INSTDIR\Backgrounds\2.jpg
@@ -90,6 +92,6 @@ Section "Uninstall"
 
 	delete "$SMPROGRAMS\LabelCreator\LabelCreator.lnk"
 	delete "$SMPROGRAMS\LabelCreator\Readme.lnk"
-	delete "$SMPROGRAMS\LabelCreator\uninstall.lnk"
+	delete "$SMPROGRAMS\LabelCreator\Uninstall.lnk"
 	RMDIR  "$SMPROGRAMS\LabelCreator"
 SectionEnd

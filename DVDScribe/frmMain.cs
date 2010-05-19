@@ -680,15 +680,26 @@ namespace DVDScribe
                 String labelPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
                 Directory.CreateDirectory(labelPath);
 
+
                 FastZipEvents events = null;
                 FastZip fastZip = new FastZip(events);
-                fastZip.CreateEmptyDirectories = true;
-                fastZip.RestoreAttributesOnExtract = true;
-                fastZip.RestoreDateTimeOnExtract = true;
+                try
+                {
+                    fastZip.CreateEmptyDirectories = true;
+                    fastZip.RestoreAttributesOnExtract = true;
+                    fastZip.RestoreDateTimeOnExtract = true;
+                    fastZip.ExtractZip(dlgOpenDialog.FileName, labelPath, "");
+                    openXML(labelPath);
+                    dlgSaveFile.FileName = dlgOpenDialog.FileName;
+                }
+                catch (ICSharpCode.SharpZipLib.Zip.ZipException eee)
+                {
+                    MessageBox.Show("Unable to open, file is corrupt or invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                }
+                catch (Exception ee) {
+                    MessageBox.Show("Error: " + ee.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                fastZip.ExtractZip(dlgOpenDialog.FileName, labelPath, "");
-                openXML(labelPath);
-                dlgSaveFile.FileName = dlgOpenDialog.FileName;
             }
         }
 
