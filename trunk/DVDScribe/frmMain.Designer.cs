@@ -79,14 +79,6 @@
             this.tsbtnImageMode = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnAlignToLeft = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnAlignToRight = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnAlignToTop = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnAlignToBottom = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnCenterHorizontal = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnCenterVertical = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnEditOptions = new System.Windows.Forms.ToolStripDropDownButton();
@@ -96,6 +88,7 @@
             this.tsDriveState = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbMode = new System.Windows.Forms.ToolStripStatusLabel();
             this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.pbxCanvas = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -108,10 +101,18 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lvIncludedBG = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbxCanvas = new System.Windows.Forms.PictureBox();
             this.dlgOpenDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtnAlignToLeft = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAlignToRight = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAlignToTop = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAlignToBottom = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtnCenterVertical = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnCenterHorizontal = new System.Windows.Forms.ToolStripButton();
             this.msMainMenu.SuspendLayout();
             this.tsQMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -122,12 +123,15 @@
             this.splitContainer2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).BeginInit();
             this.SuspendLayout();
             // 
             // msMainMenu
             // 
             this.msMainMenu.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.imgaeToolStripMenuItem,
+            this.aboutToolStripMenuItem1});
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
             this.msMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -137,69 +141,79 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem1,
+            this.openToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.saveToolStripMenuItem1,
+            this.saveAsToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.printToolStripMenuItem1,
+            this.toolStripMenuItem5,
+            this.exitToolStripMenuItem1});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.fileToolStripMenuItem.Text = "&Archivo";
             // 
             // newToolStripMenuItem1
             // 
             this.newToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_new;
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.newToolStripMenuItem1.Text = "New...";
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.newToolStripMenuItem1.Text = "Nuevo...";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.acnNewCover);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem.Text = "&Open...";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.openToolStripMenuItem.Text = "&Abrir...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(153, 6);
             // 
             // saveToolStripMenuItem1
             // 
-            this.saveToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem1.Image")));
+            this.saveToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_save;
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.saveToolStripMenuItem1.Text = "Save";
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.saveToolStripMenuItem1.Text = "Guardar";
             this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_save_as;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveAsToolStripMenuItem.Text = "Save as...";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.saveAsToolStripMenuItem.Text = "Guardar como...";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(153, 6);
             // 
             // printToolStripMenuItem1
             // 
             this.printToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_preview;
             this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            this.printToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.printToolStripMenuItem1.Text = "Print";
+            this.printToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.printToolStripMenuItem1.Text = "Imprimir";
             this.printToolStripMenuItem1.Click += new System.EventHandler(this.acnPreview);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(153, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_exit;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem1.Text = "Quit";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.exitToolStripMenuItem1.Text = "Salir";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.acnExitApplication);
             // 
             // imgaeToolStripMenuItem
@@ -209,8 +223,8 @@
             this.zoomBackgroundToolStripMenuItem1,
             this.rotateBackgroundToolStripMenuItem1});
             this.imgaeToolStripMenuItem.Name = "imgaeToolStripMenuItem";
-            this.imgaeToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.imgaeToolStripMenuItem.Text = "&Image";
+            this.imgaeToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.imgaeToolStripMenuItem.Text = "&Imagen";
             // 
             // filterToolStripMenuItem
             // 
@@ -255,21 +269,21 @@
             this.ayudaDeDVDScribeToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
-            this.aboutToolStripMenuItem1.Text = "&Help";
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(51, 20);
+            this.aboutToolStripMenuItem1.Text = "Ay&uda";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
             // ayudaDeDVDScribeToolStripMenuItem
             // 
             this.ayudaDeDVDScribeToolStripMenuItem.Name = "ayudaDeDVDScribeToolStripMenuItem";
-            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.ayudaDeDVDScribeToolStripMenuItem.Text = "Guide";
+            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.ayudaDeDVDScribeToolStripMenuItem.Text = "Ayuda";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.acercaDeToolStripMenuItem.Text = "About";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // dVDScribeToolStripMenuItem
@@ -367,6 +381,26 @@
             // 
             this.tsQMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsQMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.tsQMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnNewCover,
+            this.tsbtnSaveCover,
+            this.tsbtnPreview,
+            this.toolStripSeparator3,
+            this.tsbtnImage,
+            this.toolStripSeparator4,
+            this.tsbtnDragMode,
+            this.tsbtnTextMode,
+            this.tsbtnImageMode,
+            this.toolStripSeparator5,
+            this.tsbtnDelete,
+            this.toolStripSeparator6,
+            this.tsbtnAlignToLeft,
+            this.tsbtnAlignToRight,
+            this.tsbtnAlignToTop,
+            this.tsbtnAlignToBottom,
+            this.toolStripSeparator7,
+            this.tsbtnCenterVertical,
+            this.tsbtnCenterHorizontal});
             this.tsQMenu.Location = new System.Drawing.Point(0, 24);
             this.tsQMenu.Name = "tsQMenu";
             this.tsQMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -382,18 +416,16 @@
             this.tsbtnNewCover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnNewCover.Name = "tsbtnNewCover";
             this.tsbtnNewCover.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnNewCover.Text = "New";
             this.tsbtnNewCover.ToolTipText = "Create new cover";
             this.tsbtnNewCover.Click += new System.EventHandler(this.acnNewCover);
             // 
             // tsbtnSaveCover
             // 
             this.tsbtnSaveCover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnSaveCover.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSaveCover.Image")));
+            this.tsbtnSaveCover.Image = global::DVDScribe.Properties.Resources.img_save;
             this.tsbtnSaveCover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnSaveCover.Name = "tsbtnSaveCover";
             this.tsbtnSaveCover.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnSaveCover.Text = "Save";
             this.tsbtnSaveCover.ToolTipText = "Save image as...";
             this.tsbtnSaveCover.Click += new System.EventHandler(this.tsbtnSaveCover_Click);
             // 
@@ -404,7 +436,6 @@
             this.tsbtnPreview.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnPreview.Name = "tsbtnPreview";
             this.tsbtnPreview.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnPreview.Text = "Print";
             this.tsbtnPreview.ToolTipText = "Print LightScribe cover";
             this.tsbtnPreview.Click += new System.EventHandler(this.acnPreview);
             // 
@@ -515,76 +546,6 @@
             this.tsbtnDelete.ToolTipText = "Delete currently selected control";
             this.tsbtnDelete.Click += new System.EventHandler(this.acnDeleteControl);
             // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
-            // 
-            // tsbtnAlignToLeft
-            // 
-            this.tsbtnAlignToLeft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAlignToLeft.Image = global::DVDScribe.Properties.Resources.align_left;
-            this.tsbtnAlignToLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAlignToLeft.Name = "tsbtnAlignToLeft";
-            this.tsbtnAlignToLeft.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnAlignToLeft.Text = "Align to left";
-            this.tsbtnAlignToLeft.Click += new System.EventHandler(this.tsbtnAlignToLeft_Click);
-            // 
-            // tsbtnAlignToRight
-            // 
-            this.tsbtnAlignToRight.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAlignToRight.Image = global::DVDScribe.Properties.Resources.align_right;
-            this.tsbtnAlignToRight.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAlignToRight.Name = "tsbtnAlignToRight";
-            this.tsbtnAlignToRight.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnAlignToRight.Text = "Align to right";
-            this.tsbtnAlignToRight.Click += new System.EventHandler(this.tsbtnAlignToRight_Click);
-            // 
-            // tsbtnAlignToTop
-            // 
-            this.tsbtnAlignToTop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAlignToTop.Image = global::DVDScribe.Properties.Resources.align_top;
-            this.tsbtnAlignToTop.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAlignToTop.Name = "tsbtnAlignToTop";
-            this.tsbtnAlignToTop.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnAlignToTop.Text = "Align to top";
-            this.tsbtnAlignToTop.Click += new System.EventHandler(this.tsbtnAlignToTop_Click);
-            // 
-            // tsbtnAlignToBottom
-            // 
-            this.tsbtnAlignToBottom.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAlignToBottom.Image = global::DVDScribe.Properties.Resources.align_bottom;
-            this.tsbtnAlignToBottom.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAlignToBottom.Name = "tsbtnAlignToBottom";
-            this.tsbtnAlignToBottom.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnAlignToBottom.Text = "Align to bottom";
-            this.tsbtnAlignToBottom.Click += new System.EventHandler(this.tsbtnAlignToBottom_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
-            // 
-            // tsbtnCenterHorizontal
-            // 
-            this.tsbtnCenterHorizontal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnCenterHorizontal.Image = global::DVDScribe.Properties.Resources.align_center_horizontal;
-            this.tsbtnCenterHorizontal.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnCenterHorizontal.Name = "tsbtnCenterHorizontal";
-            this.tsbtnCenterHorizontal.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnCenterHorizontal.Text = "Center horizontal";
-            this.tsbtnCenterHorizontal.Click += new System.EventHandler(this.tsbtnCenterHorizontal_Click);
-            // 
-            // tsbtnCenterVertical
-            // 
-            this.tsbtnCenterVertical.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnCenterVertical.Image = global::DVDScribe.Properties.Resources.align_center_vertical;
-            this.tsbtnCenterVertical.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnCenterVertical.Name = "tsbtnCenterVertical";
-            this.tsbtnCenterVertical.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnCenterVertical.Text = "Center vertical";
-            this.tsbtnCenterVertical.Click += new System.EventHandler(this.tsbtnCenterVertical_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -642,6 +603,23 @@
             // 
             this.dlgSaveFile.Filter = "Label Creator Files (*.llf)|*.llf|Todos los archivos (*.*)|*.*";
             // 
+            // pbxCanvas
+            // 
+            this.pbxCanvas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxCanvas.BackColor = System.Drawing.Color.White;
+            this.pbxCanvas.Location = new System.Drawing.Point(52, 30);
+            this.pbxCanvas.Name = "pbxCanvas";
+            this.pbxCanvas.Size = new System.Drawing.Size(644, 644);
+            this.pbxCanvas.TabIndex = 3;
+            this.pbxCanvas.TabStop = false;
+            this.pbxCanvas.DoubleClick += new System.EventHandler(this.pbxCanvas_DoubleClick);
+            this.pbxCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseMove);
+            this.pbxCanvas.Click += new System.EventHandler(this.pbxCanvas_Click);
+            this.pbxCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseClick);
+            this.pbxCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseDown);
+            this.pbxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCanvas_Paint);
+            this.pbxCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseUp);
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -679,7 +657,7 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(217, 678);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Explore";
+            this.tabPage1.Text = "Explorar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
@@ -751,7 +729,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 22);
             this.button2.TabIndex = 16;
-            this.button2.Text = "Insert";
+            this.button2.Text = "Insertar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -761,7 +739,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 22);
             this.button1.TabIndex = 15;
-            this.button1.Text = "Background";
+            this.button1.Text = "Como fondo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -772,7 +750,7 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(217, 678);
             this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "Backgrounds";
+            this.tabPage2.Text = "Fondos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // lvIncludedBG
@@ -799,26 +777,79 @@
             this.panel1.TabIndex = 4;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
-            // pbxCanvas
-            // 
-            this.pbxCanvas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxCanvas.BackColor = System.Drawing.Color.White;
-            this.pbxCanvas.Location = new System.Drawing.Point(52, 30);
-            this.pbxCanvas.Name = "pbxCanvas";
-            this.pbxCanvas.Size = new System.Drawing.Size(644, 644);
-            this.pbxCanvas.TabIndex = 3;
-            this.pbxCanvas.TabStop = false;
-            this.pbxCanvas.DoubleClick += new System.EventHandler(this.pbxCanvas_DoubleClick);
-            this.pbxCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseMove);
-            this.pbxCanvas.Click += new System.EventHandler(this.pbxCanvas_Click);
-            this.pbxCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseClick);
-            this.pbxCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseDown);
-            this.pbxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCanvas_Paint);
-            this.pbxCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbxCanvas_MouseUp);
-            // 
             // dlgOpenDialog
             // 
             this.dlgOpenDialog.Filter = "Label Creator Files (*.llf)|*.llf|Todos los archivos (*.*)|*.*";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
+            // 
+            // tsbtnAlignToLeft
+            // 
+            this.tsbtnAlignToLeft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnAlignToLeft.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToLeft.Image")));
+            this.tsbtnAlignToLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAlignToLeft.Name = "tsbtnAlignToLeft";
+            this.tsbtnAlignToLeft.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnAlignToLeft.Text = "Align to left";
+            this.tsbtnAlignToLeft.Click += new System.EventHandler(this.tsbtnAlignToLeft_Click);
+            // 
+            // tsbtnAlignToRight
+            // 
+            this.tsbtnAlignToRight.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnAlignToRight.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToRight.Image")));
+            this.tsbtnAlignToRight.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAlignToRight.Name = "tsbtnAlignToRight";
+            this.tsbtnAlignToRight.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnAlignToRight.Text = "Align to Right";
+            this.tsbtnAlignToRight.Click += new System.EventHandler(this.tsbtnAlignToRight_Click);
+            // 
+            // tsbtnAlignToTop
+            // 
+            this.tsbtnAlignToTop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnAlignToTop.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToTop.Image")));
+            this.tsbtnAlignToTop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAlignToTop.Name = "tsbtnAlignToTop";
+            this.tsbtnAlignToTop.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnAlignToTop.Text = "Align to top";
+            this.tsbtnAlignToTop.Click += new System.EventHandler(this.tsbtnAlignToTop_Click);
+            // 
+            // tsbtnAlignToBottom
+            // 
+            this.tsbtnAlignToBottom.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnAlignToBottom.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToBottom.Image")));
+            this.tsbtnAlignToBottom.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAlignToBottom.Name = "tsbtnAlignToBottom";
+            this.tsbtnAlignToBottom.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnAlignToBottom.Text = "Align to bottom";
+            this.tsbtnAlignToBottom.Click += new System.EventHandler(this.tsbtnAlignToBottom_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
+            // 
+            // tsbtnCenterVertical
+            // 
+            this.tsbtnCenterVertical.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnCenterVertical.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCenterVertical.Image")));
+            this.tsbtnCenterVertical.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnCenterVertical.Name = "tsbtnCenterVertical";
+            this.tsbtnCenterVertical.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnCenterVertical.Text = "Center vertical";
+            this.tsbtnCenterVertical.Click += new System.EventHandler(this.tsbtnCenterVertical_Click);
+            // 
+            // tsbtnCenterHorizontal
+            // 
+            this.tsbtnCenterHorizontal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnCenterHorizontal.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCenterHorizontal.Image")));
+            this.tsbtnCenterHorizontal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnCenterHorizontal.Name = "tsbtnCenterHorizontal";
+            this.tsbtnCenterHorizontal.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnCenterHorizontal.Text = "Center Horizontal";
+            this.tsbtnCenterHorizontal.Click += new System.EventHandler(this.tsbtnCenterHorizontal_Click);
             // 
             // frmMain
             // 
@@ -844,6 +875,7 @@
             this.msMainMenu.PerformLayout();
             this.tsQMenu.ResumeLayout(false);
             this.tsQMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -854,7 +886,6 @@
             this.splitContainer2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -940,8 +971,8 @@
         private System.Windows.Forms.ToolStripButton tsbtnAlignToTop;
         private System.Windows.Forms.ToolStripButton tsbtnAlignToBottom;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripButton tsbtnCenterHorizontal;
         private System.Windows.Forms.ToolStripButton tsbtnCenterVertical;
+        private System.Windows.Forms.ToolStripButton tsbtnCenterHorizontal;
     }
 }
 

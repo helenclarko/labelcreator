@@ -894,17 +894,6 @@ namespace DVDScribe
 
         }
 
-        private void pbxCanvas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmMain_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.ControlKey)
-                controlPressed = false;
-        }
-
         private void tsbtnAlignToLeft_Click(object sender, EventArgs e)
         {
             int left = 640;
@@ -923,7 +912,6 @@ namespace DVDScribe
                 }
             }
             pbxCanvas.Invalidate();
-
         }
 
         private void tsbtnAlignToRight_Click(object sender, EventArgs e)
@@ -933,7 +921,7 @@ namespace DVDScribe
             {
                 if (aControl.Selected)
                 {
-                    if (aControl.Location.X + aControl.Width > right) right = aControl.Location.X + aControl.Width ;
+                    if (aControl.Location.X + aControl.Width > right) right = aControl.Location.X + aControl.Width;
                 }
             }
             foreach (libControls.dsControl aControl in dsControls)
@@ -973,7 +961,7 @@ namespace DVDScribe
             {
                 if (aControl.Selected)
                 {
-                    if (aControl.Location.Y + aControl.Height > top) top = aControl.Location.Y + aControl.Height ;
+                    if (aControl.Location.Y + aControl.Height > top) top = aControl.Location.Y + aControl.Height;
                 }
             }
             foreach (libControls.dsControl aControl in dsControls)
@@ -981,6 +969,25 @@ namespace DVDScribe
                 if (aControl.Selected)
                 {
                     aControl.Location.Y = top - aControl.Height;
+                }
+            }
+            pbxCanvas.Invalidate();
+
+        }
+
+        private void frmMain_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey)
+                controlPressed = false;
+        }
+
+        private void tsbtnCenterVertical_Click(object sender, EventArgs e)
+        {
+            foreach (libControls.dsControl aControl in dsControls)
+            {
+                if (aControl.Selected)
+                {
+                    aControl.Location.Y = (640 - aControl.Height) / 2;
                 }
             }
             pbxCanvas.Invalidate();
@@ -998,16 +1005,9 @@ namespace DVDScribe
             pbxCanvas.Invalidate();
         }
 
-        private void tsbtnCenterVertical_Click(object sender, EventArgs e)
+        private void pbxCanvas_Click(object sender, EventArgs e)
         {
-            foreach (libControls.dsControl aControl in dsControls)
-            {
-                if (aControl.Selected)
-                {
-                    aControl.Location.Y = (640 - aControl.Height) / 2;
-                }
-            }
-            pbxCanvas.Invalidate();
+
         }
 
 
