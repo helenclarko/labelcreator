@@ -61,27 +61,6 @@ G:\dvdscribe\DVDScribe\obj\Release\DVDScribe.ImageEdit.resources
 G:\dvdscribe\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
 G:\dvdscribe\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
 G:\dvdscribe\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\ExpTreeLib.dll
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\ResolveAssemblyReference.cache
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmAbout.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmContrastPreview.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmGrayscalePreview.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmPreviewBase.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmSplash.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmBackgroundAngle.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmBackgroundResize.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmMain.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmSelectBackground.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmTextEditor.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.exe.config
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.exe
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.pdb
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.exe
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.pdb
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.ImageEdit.resources
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\bin\Release\LabelCreator.exe.config
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\LabelCreator.exe
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\LabelCreator.pdb
@@ -103,8 +82,29 @@ C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Rel
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\ICSharpCode.SharpZipLib.dll
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\bin\Release\ICSharpCode.SharpZipLib.dll
 C:\Documents and Settings\fernando\Mis documentos\labelcreator\DVDScribe\obj\Release\DVDScribe.frmLicense.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmLicense.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.exe.config
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.exe
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\LabelCreator.pdb
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\ExpTreeLib.dll
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\ResolveAssemblyReference.cache
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmAbout.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmContrastPreview.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmCredits.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmGrayscalePreview.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmLicense.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmPreviewBase.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmSplash.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmBackgroundAngle.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmBackgroundResize.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmMain.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmSelectBackground.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmTextEditor.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.ImageEdit.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.exe
+C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.pdb
