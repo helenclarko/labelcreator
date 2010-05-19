@@ -79,6 +79,14 @@
             this.tsbtnImageMode = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtnAlignToLeft = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAlignToRight = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAlignToTop = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnAlignToBottom = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtnCenterVertical = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnCenterHorizontal = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnEditOptions = new System.Windows.Forms.ToolStripDropDownButton();
@@ -102,14 +110,6 @@
             this.lvIncludedBG = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dlgOpenDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnAlignToLeft = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnAlignToRight = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnAlignToTop = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnAlignToBottom = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnCenterVertical = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnCenterHorizontal = new System.Windows.Forms.ToolStripButton();
             this.msMainMenu.SuspendLayout();
             this.tsQMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCanvas)).BeginInit();
@@ -546,6 +546,76 @@
             this.tsbtnDelete.ToolTipText = "Delete currently selected control";
             this.tsbtnDelete.Click += new System.EventHandler(this.acnDeleteControl);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
+            // 
+            // tsbtnAlignToLeft
+            // 
+            this.tsbtnAlignToLeft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnAlignToLeft.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToLeft.Image")));
+            this.tsbtnAlignToLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAlignToLeft.Name = "tsbtnAlignToLeft";
+            this.tsbtnAlignToLeft.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnAlignToLeft.Text = "Align to left";
+            this.tsbtnAlignToLeft.Click += new System.EventHandler(this.tsbtnAlignToLeft_Click);
+            // 
+            // tsbtnAlignToRight
+            // 
+            this.tsbtnAlignToRight.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnAlignToRight.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToRight.Image")));
+            this.tsbtnAlignToRight.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAlignToRight.Name = "tsbtnAlignToRight";
+            this.tsbtnAlignToRight.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnAlignToRight.Text = "Align to Right";
+            this.tsbtnAlignToRight.Click += new System.EventHandler(this.tsbtnAlignToRight_Click);
+            // 
+            // tsbtnAlignToTop
+            // 
+            this.tsbtnAlignToTop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnAlignToTop.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToTop.Image")));
+            this.tsbtnAlignToTop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAlignToTop.Name = "tsbtnAlignToTop";
+            this.tsbtnAlignToTop.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnAlignToTop.Text = "Align to top";
+            this.tsbtnAlignToTop.Click += new System.EventHandler(this.tsbtnAlignToTop_Click);
+            // 
+            // tsbtnAlignToBottom
+            // 
+            this.tsbtnAlignToBottom.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnAlignToBottom.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToBottom.Image")));
+            this.tsbtnAlignToBottom.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAlignToBottom.Name = "tsbtnAlignToBottom";
+            this.tsbtnAlignToBottom.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnAlignToBottom.Text = "Align to bottom";
+            this.tsbtnAlignToBottom.Click += new System.EventHandler(this.tsbtnAlignToBottom_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
+            // 
+            // tsbtnCenterVertical
+            // 
+            this.tsbtnCenterVertical.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnCenterVertical.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCenterVertical.Image")));
+            this.tsbtnCenterVertical.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnCenterVertical.Name = "tsbtnCenterVertical";
+            this.tsbtnCenterVertical.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnCenterVertical.Text = "Center vertical";
+            this.tsbtnCenterVertical.Click += new System.EventHandler(this.tsbtnCenterVertical_Click);
+            // 
+            // tsbtnCenterHorizontal
+            // 
+            this.tsbtnCenterHorizontal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnCenterHorizontal.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCenterHorizontal.Image")));
+            this.tsbtnCenterHorizontal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnCenterHorizontal.Name = "tsbtnCenterHorizontal";
+            this.tsbtnCenterHorizontal.Size = new System.Drawing.Size(28, 28);
+            this.tsbtnCenterHorizontal.Text = "Center Horizontal";
+            this.tsbtnCenterHorizontal.Click += new System.EventHandler(this.tsbtnCenterHorizontal_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -780,76 +850,6 @@
             // dlgOpenDialog
             // 
             this.dlgOpenDialog.Filter = "Label Creator Files (*.llf)|*.llf|Todos los archivos (*.*)|*.*";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
-            // 
-            // tsbtnAlignToLeft
-            // 
-            this.tsbtnAlignToLeft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAlignToLeft.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToLeft.Image")));
-            this.tsbtnAlignToLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAlignToLeft.Name = "tsbtnAlignToLeft";
-            this.tsbtnAlignToLeft.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnAlignToLeft.Text = "Align to left";
-            this.tsbtnAlignToLeft.Click += new System.EventHandler(this.tsbtnAlignToLeft_Click);
-            // 
-            // tsbtnAlignToRight
-            // 
-            this.tsbtnAlignToRight.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAlignToRight.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToRight.Image")));
-            this.tsbtnAlignToRight.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAlignToRight.Name = "tsbtnAlignToRight";
-            this.tsbtnAlignToRight.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnAlignToRight.Text = "Align to Right";
-            this.tsbtnAlignToRight.Click += new System.EventHandler(this.tsbtnAlignToRight_Click);
-            // 
-            // tsbtnAlignToTop
-            // 
-            this.tsbtnAlignToTop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAlignToTop.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToTop.Image")));
-            this.tsbtnAlignToTop.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAlignToTop.Name = "tsbtnAlignToTop";
-            this.tsbtnAlignToTop.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnAlignToTop.Text = "Align to top";
-            this.tsbtnAlignToTop.Click += new System.EventHandler(this.tsbtnAlignToTop_Click);
-            // 
-            // tsbtnAlignToBottom
-            // 
-            this.tsbtnAlignToBottom.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnAlignToBottom.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAlignToBottom.Image")));
-            this.tsbtnAlignToBottom.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnAlignToBottom.Name = "tsbtnAlignToBottom";
-            this.tsbtnAlignToBottom.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnAlignToBottom.Text = "Align to bottom";
-            this.tsbtnAlignToBottom.Click += new System.EventHandler(this.tsbtnAlignToBottom_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
-            // 
-            // tsbtnCenterVertical
-            // 
-            this.tsbtnCenterVertical.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnCenterVertical.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCenterVertical.Image")));
-            this.tsbtnCenterVertical.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnCenterVertical.Name = "tsbtnCenterVertical";
-            this.tsbtnCenterVertical.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnCenterVertical.Text = "Center vertical";
-            this.tsbtnCenterVertical.Click += new System.EventHandler(this.tsbtnCenterVertical_Click);
-            // 
-            // tsbtnCenterHorizontal
-            // 
-            this.tsbtnCenterHorizontal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnCenterHorizontal.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCenterHorizontal.Image")));
-            this.tsbtnCenterHorizontal.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnCenterHorizontal.Name = "tsbtnCenterHorizontal";
-            this.tsbtnCenterHorizontal.Size = new System.Drawing.Size(28, 28);
-            this.tsbtnCenterHorizontal.Text = "Center Horizontal";
-            this.tsbtnCenterHorizontal.Click += new System.EventHandler(this.tsbtnCenterHorizontal_Click);
             // 
             // frmMain
             // 
