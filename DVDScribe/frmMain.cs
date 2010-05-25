@@ -414,17 +414,21 @@ namespace DVDScribe
 
         private void deleteControls()
         {
+            List<libControls.dsControl> dsControls2 = new List<libControls.dsControl>();
             foreach (libControls.dsControl aControl in dsControls)
             {
                 if (aControl.Selected)
                 {
                     libControls.dsControl fControl = aControl;
-                    dsControls.Remove(fControl);
-                    fControl = null;
-                    pbxCanvas.Invalidate();
-                    break;
+                    dsControls2.Add(fControl);
+
                 }
             }
+
+            foreach(libControls.dsControl aControl in dsControls2) {
+                dsControls.Remove(aControl);
+            }
+            pbxCanvas.Invalidate();
         }
 
         private void cleardsControls()
