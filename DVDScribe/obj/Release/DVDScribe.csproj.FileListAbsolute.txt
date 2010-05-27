@@ -101,7 +101,6 @@ C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frm
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmBackgroundResize.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmMain.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmSelectBackground.resources
-C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.frmTextEditor.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.ImageEdit.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.Properties.Resources.resources
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.TextEdit.resources
