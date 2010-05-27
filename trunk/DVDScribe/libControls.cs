@@ -209,9 +209,10 @@ namespace DVDScribe
                 {
                     this.Editor = new ImageEdit(this.FilePath,new Size(this.Dimention.Width + 2,this.Dimention.Height + 2));
                 }
-                c.Controls.Add(Editor);
-                Point NewLocation = new Point(this.Location.X - 1, this.Location.Y - 1);
+                c.Parent.Controls.Add(Editor);
+                Point NewLocation = new Point(c.Location.X + this.Location.X - 1, c.Location.Y + this.Location.Y - 1);
                 Editor.Location = NewLocation;
+                Editor.BringToFront();
                 editorVisible = true;
             }
 
@@ -220,13 +221,13 @@ namespace DVDScribe
                 this.FilePath = Editor.dlgOpenFile.FileName;
                 this.LoadFromFile(this.FilePath);
                 this.Dimention = Editor.pbxImage.Size;
-                this.Location = new Point(Editor.Location.X + 1, Editor.Location.Y + 1);
+                //this.Location = new Point(Editor.Location.X + 1, Editor.Location.Y + 1);
                 if (pImage != null)
                 {
                     pZoomH = (double)this.Dimention.Width / (double)pImage.Width;
                     pZoomV = (double)this.Dimention.Height / (double)pImage.Height;
                 }
-                c.Controls.Remove(Editor);
+                c.Parent.Controls.Remove(Editor);
                 editorVisible = false;
                 pHide = false;
                 if (OnChanged != null)
@@ -313,7 +314,7 @@ namespace DVDScribe
                 pFont = Editor.txtText.Font;
                 pColor = Editor.txtText.ForeColor;
                 Text = Editor.txtText.Text;
-                c.Controls.Remove(Editor);
+                c.Parent.Controls.Remove(Editor);
                 editorVisible = false;
                 pHide = false;
             }
@@ -327,16 +328,11 @@ namespace DVDScribe
             {
                 pHide = true;
                 this.Editor = new TextEdit(Text, pFont, pColor);
-                c.Controls.Add(Editor);
-                Editor.Location = this.Location;
+                c.Parent.Controls.Add(Editor);
                 editorVisible = true;
-                
-               /* if (frmEdit.ShowDialog() == DialogResult.OK)
-                {
-                    pFont = frmEdit.txtText.Font;
-                    pColor = frmEdit.dlgFont.Color;
-                    Text = frmEdit.txtText.Text;                                        
-                }*/
+                Point NewLocation = new Point(c.Location.X + this.Location.X - 1, c.Location.Y + this.Location.Y - 1);
+                Editor.Location = NewLocation;
+                Editor.BringToFront();                
             }
         }
     }

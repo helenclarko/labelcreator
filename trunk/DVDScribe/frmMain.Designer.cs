@@ -159,27 +159,27 @@
             // 
             this.newToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_new;
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.newToolStripMenuItem1.Text = "New...";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.acnNewCover);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(153, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(117, 6);
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_save;
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.saveToolStripMenuItem1.Text = "Save";
             this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
@@ -187,32 +187,32 @@
             // 
             this.saveAsToolStripMenuItem.Image = global::DVDScribe.Properties.Resources.img_save_as;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.saveAsToolStripMenuItem.Text = "Save as...";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(153, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(117, 6);
             // 
             // printToolStripMenuItem1
             // 
             this.printToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_preview;
             this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            this.printToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.printToolStripMenuItem1.Text = "Print";
             this.printToolStripMenuItem1.Click += new System.EventHandler(this.acnPreview);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(153, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(117, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Image = global::DVDScribe.Properties.Resources.img_exit;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.exitToolStripMenuItem1.Text = "Quit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.acnExitApplication);
             // 
@@ -276,13 +276,13 @@
             // ayudaDeDVDScribeToolStripMenuItem
             // 
             this.ayudaDeDVDScribeToolStripMenuItem.Name = "ayudaDeDVDScribeToolStripMenuItem";
-            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ayudaDeDVDScribeToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.ayudaDeDVDScribeToolStripMenuItem.Text = "Manual";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.acercaDeToolStripMenuItem.Text = "About";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
@@ -845,6 +845,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(745, 704);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // dlgOpenDialog
