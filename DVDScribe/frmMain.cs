@@ -132,7 +132,7 @@ namespace DVDScribe
 
         private void resetToBlank()
         {
-            if (MessageBox.Show("¿Esta seguro que desea cerrar la etiqueta actual?","Nueva etiqueta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Do you want to close the current label?","New label", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 Cover = new Bitmap(640, 640);
                 BufferImage = null;
@@ -360,7 +360,7 @@ namespace DVDScribe
             {
                 if (aControl.isOver(DeltaX, DeltaY))
                 {
-                    aControl.LauchEditor(pbxCanvas); 
+                    aControl.LaunchEditor(pbxCanvas); 
                 }
             }            
         }
@@ -387,13 +387,13 @@ namespace DVDScribe
                 case Mode.mText: libControls.TextField tf = new libControls.TextField(e.X,e.Y,0,0);
                     dsControls.Add(tf);
                     tf.OnChanged = OnControlChanged;
-                    tf.LauchEditor(pbxCanvas);                    
+                    tf.LaunchEditor(pbxCanvas);                    
                     CurrentMode = Mode.mDrag;
                     break;
                 case Mode.mImage: libControls.ImageField imf = new libControls.ImageField(String.Empty,e.X,e.Y,0,0);
                     dsControls.Add(imf);
                     imf.OnChanged = OnControlChanged;
-                    imf.LauchEditor(pbxCanvas);
+                    imf.LaunchEditor(pbxCanvas);
                     CurrentMode = Mode.mDrag;
                     break;
                 case Mode.mDrag:
@@ -449,7 +449,7 @@ namespace DVDScribe
 
         private void acnExitApplication(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to close DVDScribe?", "Exit application", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to close?", "Exit application", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -627,7 +627,7 @@ namespace DVDScribe
                 libControls.ImageField imf = new libControls.ImageField(lv.SelectedItems[0].Tag.ToString(), 200, 200, 0, 0);
                 dsControls.Add(imf);
                 imf.OnChanged = OnControlChanged;
-                imf.LauchEditor(pbxCanvas);
+                imf.LaunchEditor(pbxCanvas);
                 CurrentMode = Mode.mDrag;
             }
             catch (Exception exc)
