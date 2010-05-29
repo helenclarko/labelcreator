@@ -98,7 +98,7 @@ namespace DVDScribe
             }
 
             public virtual void Paint(Graphics g){}
-            public virtual void LauchEditor(Control c) { }
+            public virtual void LaunchEditor(Control c) { }
             public virtual void AddToImage(Graphics g) { }
             public virtual void CloseEditor(Control c) { }
 
@@ -198,7 +198,7 @@ namespace DVDScribe
                 }                  
             }
 
-            public override void LauchEditor(Control c)
+            public override void LaunchEditor(Control c)
             {
                 pHide = true;
                 if (this.FilePath == "")
@@ -324,7 +324,7 @@ namespace DVDScribe
 
             }
 
-            public override void LauchEditor(Control c) 
+            public override void LaunchEditor(Control c) 
             {
                 pHide = true;
                 this.Editor = new TextEdit(Text, pFont, pColor);
