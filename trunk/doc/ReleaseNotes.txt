@@ -9,7 +9,9 @@ Version 0.0.0.3 (2010.xx.xx)
 	*	Added panel to include background art with the program
 	*	Partially implemented opening/saving label projects
 	*	When key DEL is pressed the current object is deleted
-	*	...
+	*	Added support to select several objects with CTRL
+	*	Uninstaller improvements
+	*	
 
 Version 0.0.0.2 (2008.01.08)
 ===============

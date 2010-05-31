@@ -45,7 +45,7 @@
             this.cmdOK.Name = "cmdOK";
             this.cmdOK.Size = new System.Drawing.Size(75, 23);
             this.cmdOK.TabIndex = 0;
-            this.cmdOK.Text = "Aceptar";
+            this.cmdOK.Text = "Ok";
             this.cmdOK.UseVisualStyleBackColor = true;
             this.cmdOK.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -55,7 +55,7 @@
             this.cmdCreditos.Name = "cmdCreditos";
             this.cmdCreditos.Size = new System.Drawing.Size(75, 23);
             this.cmdCreditos.TabIndex = 1;
-            this.cmdCreditos.Text = "Creditos";
+            this.cmdCreditos.Text = "Credit";
             this.cmdCreditos.UseVisualStyleBackColor = true;
             this.cmdCreditos.Click += new System.EventHandler(this.cmdCreditos_Click);
             // 
@@ -65,7 +65,7 @@
             this.cmdLicense.Name = "cmdLicense";
             this.cmdLicense.Size = new System.Drawing.Size(75, 23);
             this.cmdLicense.TabIndex = 2;
-            this.cmdLicense.Text = "Licencia";
+            this.cmdLicense.Text = "License";
             this.cmdLicense.UseVisualStyleBackColor = true;
             this.cmdLicense.Click += new System.EventHandler(this.cmdLicense_Click);
             // 
@@ -91,7 +91,7 @@
             // linkSite
             // 
             this.linkSite.AutoSize = true;
-            this.linkSite.Location = new System.Drawing.Point(30, 197);
+            this.linkSite.Location = new System.Drawing.Point(30, 194);
             this.linkSite.Name = "linkSite";
             this.linkSite.Size = new System.Drawing.Size(209, 13);
             this.linkSite.TabIndex = 5;
@@ -102,12 +102,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 152);
+            this.label2.Location = new System.Drawing.Point(19, 151);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(234, 26);
+            this.label2.Size = new System.Drawing.Size(220, 26);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Label Creator es una aplicación para diseñar\r\n     las etiquetas de sus discos li" +
-                "ghtscribe.";
+            this.label2.Text = " Label Creator is an application to design\r\nand print labels for your lightscribe" +
+                " discs.";
             // 
             // frmAbout
             // 
@@ -130,7 +130,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Acerca de";
+            this.Text = "About";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
