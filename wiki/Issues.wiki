@@ -1,4 +1,8 @@
-#summary One-sentence summary of this page.
+#summary Problems that may appear
+
+= Program doesn't start =
+
+Make sure you have the latest .NET framework installed.
 
 = Lightscribe libraries not found  =
 
