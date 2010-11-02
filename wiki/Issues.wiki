@@ -1,0 +1,5 @@
+#summary One-sentence summary of this page.
+
+= Lightscribe libraries not found  =
+
+If you get this message make sure you have got the LightScribe System Software installed. You can get it from http://www.lightscribe.com/downloadSection/windows/index.aspx?id=810
