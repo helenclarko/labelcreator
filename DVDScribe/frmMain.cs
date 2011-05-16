@@ -417,7 +417,7 @@ namespace DVDScribe
             List<libControls.dsControl> dsControls2 = new List<libControls.dsControl>();
             foreach (libControls.dsControl aControl in dsControls)
             {
-                if (aControl.Selected)
+                if (aControl.Selected && !aControl.editorVisible)
                 {
                     libControls.dsControl fControl = aControl;
                     dsControls2.Add(fControl);
@@ -1028,6 +1028,11 @@ namespace DVDScribe
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lv_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
