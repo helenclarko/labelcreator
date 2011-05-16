@@ -526,6 +526,8 @@ namespace DVDScribe
             ArrayList dirList = new ArrayList();
             ArrayList fileList = new ArrayList();
 
+            if (!Directory.Exists(Application.StartupPath + "\\Backgrounds")) return;
+
             CShItem CSI = new CShItem(Application.StartupPath + "\\Backgrounds");
             dirList = CSI.GetDirectories(true);
             fileList = CSI.GetFiles();
