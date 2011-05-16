@@ -53,9 +53,9 @@ FunctionEnd
  
 Section
 	SetOutPath $INSTDIR
-	File ..\DVDScribe\bin\Release\LabelCreator.exe
-	File ..\DVDScribe\bin\Release\ExpTreeLib.dll
-	File ..\DVDScribe\bin\Release\ICSharpCode.SharpZipLib.dll
+	File ..\DVDScribe\bin\x86\Release\LabelCreator.exe
+	File ..\DVDScribe\bin\x86\Release\ExpTreeLib.dll
+	File ..\DVDScribe\bin\x86\Release\ICSharpCode.SharpZipLib.dll
 	File ..\doc\ReadMe.txt
 	File ..\doc\license.txt
 	File ..\doc\ReleaseNotes.txt

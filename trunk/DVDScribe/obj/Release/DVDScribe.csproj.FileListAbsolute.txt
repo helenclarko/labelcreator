@@ -107,3 +107,6 @@ C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.Tex
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\DVDScribe.csproj.GenerateResource.Cache
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.exe
 C:\Users\QBEX\Desktop\dvdscribe\labelcreator\DVDScribe\obj\Release\LabelCreator.pdb
+D:\New folder\DVDScribe\bin\Release\LabelCreator.exe.config
+D:\New folder\DVDScribe\obj\Release\LabelCreator.exe
+D:\New folder\DVDScribe\obj\Release\LabelCreator.pdb
